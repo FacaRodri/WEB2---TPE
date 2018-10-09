@@ -1,0 +1,37 @@
+<?php
+
+    include_once "./view/navDefaultView.php";
+
+
+    class navigationController {
+        private $navDefaultView;
+
+
+        function __construct(){
+            $this->navDefaultView = new navDefaultView();
+        }
+
+        function home(){
+            $this->navDefaultView->home();
+        }
+
+        function tiposDeCerveza(){
+            $this->navDefaultView->tiposDeCerveza();
+        }
+        function contacto(){
+            $this->navDefaultView->contacto();
+        }
+        function informacionCurso(){
+            $this->navDefaultView->informacionCurso();
+        }
+        function inscripcionCurso(){
+            $this->navDefaultView->inscripcionCurso();
+
+        }
+    }
+
+
+
+
+
+?>

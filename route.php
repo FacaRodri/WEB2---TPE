@@ -1,8 +1,7 @@
 <?php
 
-
 require_once "config/ConfigApp.php";
-require_once "controller\TareasController.php";
+require_once "controller/navigationController.php";
 
 function parseURL($url)
 {
@@ -23,7 +22,7 @@ if(isset($_GET['action'])){
     if(array_key_exists($action,ConfigApp::$ACTIONS)){
         $params = $urlData[ConfigApp::$PARAMS];
         $action = explode('#',ConfigApp::$ACTIONS[$action]); //Array[0] -> TareasController [1] -> BorrarTarea
-        $controller =  new $action[0]();
+        $controller = new $action[0]();
         $metodo = $action[1];
         if(isset($params) &&  $params != null){
             echo $controller->$metodo($params);
@@ -32,8 +31,8 @@ if(isset($_GET['action'])){
             echo $controller->$metodo();
         }
     }else{
-      $controller =  new TareasController();
-      echo $controller->Home();
+      $controller =  new navigationController();
+      echo $controller->home();
     }
 }
  ?>
