@@ -28,6 +28,10 @@
             $this->navDefaultView->inscripcionCurso();
 
         }
+        function login(){
+            $this->navDefaultView->login();
+
+        }
     }
 
 

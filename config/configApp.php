@@ -10,7 +10,8 @@ class ConfigApp
       'tiposDeCerveza'=> 'navigationController#tiposDeCerveza',
       'contacto'=> 'navigationController#contacto',
       'informacionCurso' => 'navigationController#informacionCurso',
-      'inscripcionCurso' => 'navigationController#inscripcionCurso'
+      'inscripcionCurso' => 'navigationController#inscripcionCurso',
+      'login' => 'navigationController#login'
     ];
 
 }

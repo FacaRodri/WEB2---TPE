@@ -25,7 +25,10 @@ class navDefaultView {
         $this->smarty->display('templates/inscripcionCurso.tpl');
   
     }
+    function login(){
+        $this->smarty->display('templates/login.tpl');
 
+    }
 
 
 
