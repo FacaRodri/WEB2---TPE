@@ -15,9 +15,6 @@
             $this->navDefaultView->home();
         }
 
-        function tiposDeCerveza(){
-            $this->navDefaultView->tiposDeCerveza();
-        }
         function contacto(){
             $this->navDefaultView->contacto();
         }

@@ -1,4 +1,5 @@
 <?php
+
 include_once "./libs/smarty.class.php";
 
 class navDefaultView {
@@ -12,9 +13,6 @@ class navDefaultView {
         $this->smarty->display('templates/home.tpl');
     }
 
-    function tiposDeCerveza(){
-        $this->smarty->display('templates/tiposDeCerveza.tpl');
-    }
     function contacto(){
         $this->smarty->display('templates/contacto.tpl');
     }
@@ -27,10 +25,7 @@ class navDefaultView {
     }
     function login(){
         $this->smarty->display('templates/login.tpl');
-
     }
-
-
 
 
 }

@@ -2,6 +2,7 @@
 
 require_once "config/ConfigApp.php";
 require_once "controller/navigationController.php";
+require_once "controller/tiposDeCervezaController.php";
 
 function parseURL($url)
 {

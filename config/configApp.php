@@ -7,11 +7,12 @@ class ConfigApp
     public static $ACTIONS = [
       ''=> 'navigationController#home',
       'home'=> 'navigationController#home',
-      'tiposDeCerveza'=> 'navigationController#tiposDeCerveza',
+      'tiposDeCerveza'=> 'tiposDeCervezaController#mostrarCerveza',
       'contacto'=> 'navigationController#contacto',
       'informacionCurso' => 'navigationController#informacionCurso',
       'inscripcionCurso' => 'navigationController#inscripcionCurso',
-      'login' => 'navigationController#login'
+      'login' => 'navigationController#login',
+      'InsertCerveza' => 'tiposDeCervezaController#InsertCerveza'
     ];
 
 }
