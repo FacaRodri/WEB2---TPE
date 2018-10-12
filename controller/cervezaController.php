@@ -22,11 +22,11 @@ class cervezaController
     $this->CervezasView->mostrar($cervezas);
 }
 
-function editarCerveza($id_cerveza){
-  // $id_cerveza = $cerveza[0];
-
-  $cervezas = $this->CervezasModel->Get($id_cerveza);
-  $this->CervezasView->mostrarEditarCerveza($cervezas);
+function editarCerveza($params){
+  $id_cerveza = $params[0];
+  
+  $cerveza = $this->CervezasModel->Get($id_cerveza);
+  $this->CervezasView->mostrarEditarCerveza($cerveza);
 }
 
 

@@ -6,23 +6,20 @@ class tiposDeCervezaView{
 
     private $smarty;
 
- function __construct(){
-    $this->smarty = new Smarty();
- }
+    function __construct(){
+        $this->smarty = new Smarty();
+    }
 
-function mostrar($cervezas){
+    function mostrar($cervezas){
         $this->smarty->assign('cervezas', $cervezas);
         $this->smarty->display('templates/tiposDeCerveza.tpl');
     }
 
-function mostrarEditarCerveza($cervezas){
-    $this->smarty->assing('cervezas', $cervezas);
-    $this->smarty->display('templates/editarCerveza.tpl');
-}    
+    function mostrarEditarCerveza($cerveza){
+        $this->smarty->assign('cerveza', $cerveza);
+        $this->smarty->display('templates/editarCerveza.tpl');
+    }    
     
 
 
 }
-
-?>
-
