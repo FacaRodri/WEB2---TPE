@@ -12,7 +12,9 @@ class ConfigApp
       'informacionCurso' => 'navigationController#informacionCurso',
       'inscripcionCurso' => 'navigationController#inscripcionCurso',
       'login' => 'navigationController#login',
-      'InsertCerveza' => 'cervezaController#InsertCerveza'
+      'InsertCerveza' => 'cervezaController#InsertCerveza',
+      'editarCerveza' => 'cervezaController#editarCerveza',
+      'Delete' => 'cervezaController#Delete'
     ];
 
 }

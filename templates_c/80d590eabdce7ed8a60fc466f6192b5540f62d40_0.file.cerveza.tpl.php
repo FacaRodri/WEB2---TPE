@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.33, created on 2018-10-11 21:10:29
+/* Smarty version 3.1.33, created on 2018-10-12 20:18:26
   from 'C:\xampp\htdocs\WikiBeerTPE\templates\cerveza.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.33',
-  'unifunc' => 'content_5bbfa02556fd78_85119397',
+  'unifunc' => 'content_5bc0e5729d3ec2_99440305',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '80d590eabdce7ed8a60fc466f6192b5540f62d40' => 
     array (
       0 => 'C:\\xampp\\htdocs\\WikiBeerTPE\\templates\\cerveza.tpl',
-      1 => 1539285024,
+      1 => 1539368260,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_5bbfa02556fd78_85119397 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5bc0e5729d3ec2_99440305 (Smarty_Internal_Template $_smarty_tpl) {
 ?><div class="container">
 <table class="tablaTipos" align="center">
     <thead>
@@ -43,7 +43,8 @@ foreach ($_from as $_smarty_tpl->tpl_vars['cerveza']->value) {
         <tr><td><?php echo $_smarty_tpl->tpl_vars['cerveza']->value['nombre'];?>
 </td><td><?php echo $_smarty_tpl->tpl_vars['cerveza']->value['precio'];?>
 </td><td> <a href="editarCerveza/<?php echo $_smarty_tpl->tpl_vars['cerveza']->value['id_cerveza'];?>
-">EDITAR</a> </td></tr>
+">EDITAR</a> </td><td> <a href="Delete/<?php echo $_smarty_tpl->tpl_vars['cerveza']->value['id_cerveza'];?>
+">BORRAR</a> </td></tr>
 
       <?php
 }

@@ -13,7 +13,7 @@
       </ul>
     </div>
       {foreach from= $cervezas item=cerveza}
-        <tr><td>{$cerveza['nombre']}</td><td>{$cerveza['precio']}</td><td> <a href="editarCerveza/{$cerveza['id_cerveza']}">EDITAR</a> </td></tr>
+        <tr><td>{$cerveza['nombre']}</td><td>{$cerveza['precio']}</td><td> <a href="editarCerveza/{$cerveza['id_cerveza']}">EDITAR</a> </td><td> <a href="Delete/{$cerveza['id_cerveza']}">BORRAR</a> </td></tr>
 
       {/foreach}
     <div class="container">

@@ -16,23 +16,21 @@ class cervezaModel
   }
 
   function GetAll(){
-
       $sentencia = $this->db->prepare( "select * from cerveza");
       $sentencia->execute();
       return $sentencia->fetchAll(PDO::FETCH_ASSOC);
   }
 
   function Get($id_cerveza){
-
       $sentencia = $this->db->prepare( "select * from cerveza where id=?");
-      $sentencia->execute(array($id_cerveza));
+      $sentencia->execute(array($id_cerveza[0]));
       return $sentencia->fetch(PDO::FETCH_ASSOC);
   }
 
   function Insert($nombre,$precio){
 
     $sentencia = $this->db->prepare("INSERT INTO cerveza(nombre,precio) VALUES(?,?)");
-    $sentencia->execute(array($nombre,$precio));
+    $sentencia->execute(array($nombre,$precio));      
   }
 
   function Delete($id_cerveza){
@@ -41,9 +39,9 @@ class cervezaModel
     $sentencia->execute(array($id_cerveza));
   }
 
-  function Edit($id_cerveza,$nombre,$precio){
-    $sentencia = $this->db->prepare( "update cerveza set nombre = ?, precio = ?, where id=?");
-    $sentencia->execute(array($id_cerveza,$nombre,$precio));
+  function Edit($nombre,$precio,$id_cerveza){
+    $sentencia = $this->db->prepare( "UPDATE from cerveza set nombre = ?, precio = ?, where id=?");
+    $sentencia->execute(array($nombre,$precio,$id_cerveza));
   }
 
 }

@@ -14,6 +14,11 @@ function mostrar($cervezas){
         $this->smarty->assign('cervezas', $cervezas);
         $this->smarty->display('templates/tiposDeCerveza.tpl');
     }
+
+function mostrarEditarCerveza($cervezas){
+    $this->smarty->assing('cervezas', $cervezas);
+    $this->smarty->display('templates/editarCerveza.tpl');
+}    
     
 
 
