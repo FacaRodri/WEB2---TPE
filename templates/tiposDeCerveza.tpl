@@ -1,5 +1,4 @@
 {include file="header.tpl"}
-{include file="nav.tpl"}
 <div class="container-fluid">
     <div class="row">
       <div class="col-md-2">

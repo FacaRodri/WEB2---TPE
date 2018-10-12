@@ -1,5 +1,4 @@
 {include file="header.tpl"}
-{include file="nav.tpl"}
 
 <div class="container-fluid text-center" id="container">
 

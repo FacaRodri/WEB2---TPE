@@ -1,31 +1,29 @@
 <?php
-/* Smarty version 3.1.33, created on 2018-10-09 21:23:16
+/* Smarty version 3.1.33, created on 2018-10-12 17:25:19
   from 'C:\xampp\htdocs\WikiBeerTPE\templates\home.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.33',
-  'unifunc' => 'content_5bbd0024cef601_60342517',
+  'unifunc' => 'content_5bc0bcdf9a0322_55546907',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'e2a82af26548cb19e90566d59a09604175ab546a' => 
     array (
       0 => 'C:\\xampp\\htdocs\\WikiBeerTPE\\templates\\home.tpl',
-      1 => 1539112988,
+      1 => 1539357873,
       2 => 'file',
     ),
   ),
   'includes' => 
   array (
     'file:header.tpl' => 1,
-    'file:nav.tpl' => 1,
     'file:footer.tpl' => 1,
   ),
 ),false)) {
-function content_5bbd0024cef601_60342517 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5bc0bcdf9a0322_55546907 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_subTemplateRender("file:header.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
-$_smarty_tpl->_subTemplateRender("file:nav.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
 ?>
 <div class="container-fluid" id="container">
 
