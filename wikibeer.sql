@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 12-10-2018 a las 17:27:55
+-- Tiempo de generación: 12-10-2018 a las 21:05:42
 -- Versión del servidor: 10.1.32-MariaDB
 -- Versión de PHP: 7.2.5
 
@@ -39,14 +39,28 @@ CREATE TABLE `cerveza` (
 --
 
 INSERT INTO `cerveza` (`id_cerveza`, `nombre`, `precio`) VALUES
-(1, 'IPA', 300),
-(2, 'caca', 200),
-(3, 'Cogollo IPA', 0),
-(4, 'Cogollo IPA', 1000),
-(5, 'Sape', 150),
-(6, 'Cogollo IPA', 0),
-(7, 'asd', 0),
-(8, 'caca', 10);
+(1, 'prueba', 3),
+(2, 'prueba', 3),
+(3, 'prueba', 3),
+(4, 'prueba', 3),
+(5, 'prueba', 3),
+(6, 'prueba', 3),
+(7, 'prueba', 3),
+(8, 'prueba', 3),
+(9, 'prueba', 3),
+(10, 'as', 2),
+(11, 'asd', 2),
+(12, 'as', 2),
+(13, 'asdas', 22),
+(14, 'asdasd', 333),
+(15, 'asdasd2', 22),
+(16, 'asdasd', 33333),
+(17, 'asdsd2', 22),
+(18, '2345', 3456),
+(19, '12345', 234567),
+(20, 'gfds', 211),
+(21, 'fdsa', 1212),
+(22, 'fghjkjhgf43233', 333333);
 
 -- --------------------------------------------------------
 
@@ -112,7 +126,7 @@ ALTER TABLE `usuario`
 -- AUTO_INCREMENT de la tabla `cerveza`
 --
 ALTER TABLE `cerveza`
-  MODIFY `id_cerveza` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+  MODIFY `id_cerveza` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=23;
 
 --
 -- AUTO_INCREMENT de la tabla `distribuidor`
