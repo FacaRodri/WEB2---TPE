@@ -15,7 +15,11 @@ class ConfigApp
       'InsertCerveza' => 'cervezaController#InsertCerveza',
       'editarCerveza' => 'cervezaController#editarCerveza',
       'GuardarEditarCerveza' => 'cervezaController#GuardarEditarCerveza',
-      'Delete' => 'cervezaController#Delete'
+      'Delete' => 'cervezaController#Delete',
+      'InsertDistribuidor' => 'cervezaController#InsertDistribuidor',
+      'DeleteDistribuidor' => 'cervezaController#DeleteDistribuidor',
+      'GuardarEditarDistribuidor' => 'cervezaController#GuardarEditarDistribuidor'
+
 
     ];
 

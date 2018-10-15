@@ -16,7 +16,6 @@ class distribuidorModel
   }
 
   function GetAll(){
-
       $sentencia = $this->db->prepare( "select * from distribuidor");
       $sentencia->execute();
       return $sentencia->fetchAll(PDO::FETCH_ASSOC);
@@ -29,21 +28,19 @@ class distribuidorModel
       return $sentencia->fetch(PDO::FETCH_ASSOC);
   }
 
-  function Insert$nombre,$localidad){
-
-    $sentencia = $this->db->prepare("INSERT INTO distribuidor(nombre,localidad,id_cerveza) VALUES(?,?,?)");
-    $sentencia->execute(array($nombre,$localidad,$id_cerveza));
+  function Insert($nombre,$localidad){
+    $sentencia = $this->db->prepare("INSERT INTO distribuidor(nombre,localidad) VALUES(?,?)");
+    $sentencia->execute(array($nombre,$localidad));
   }
 
   function Delete($id_creador){
-
-    $sentencia = $this->db->prepare( "delete from distribuidor where id=?");
+    $sentencia = $this->db->prepare( "delete from distribuidor where id_creador=?");
     $sentencia->execute(array($id_creador));
   }
 
-  function Edit($id_creador,$nombre,$localidad,$id_cerveza){
-    $sentencia = $this->db->prepare( "update distribuidor set nombre = ?, precio = ?, id_cerveza = ? where id_creador=?");
-    $sentencia->execute(array($id_creador,$nombre,$localidad,$id_cerveza));
+  function GuardarEditarCreador($nombre,$localidad,$id_creador){
+    $sentencia = $this->db->prepare( "UPDATE distribuidor set nombre = ?, localidad = ? where id_creador=?");
+    $sentencia->execute(array($nombre,$localidad,$id_creador));
   }
 
 }

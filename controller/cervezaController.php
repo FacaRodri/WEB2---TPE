@@ -2,11 +2,13 @@
 
 require_once  "./view/tiposDeCervezaView.php";
 require_once  "./model/cervezaModel.php";
+require_once  "./model/distribuidorModel.php";
 
 class cervezaController
 {
   private $CervezasView;
   private $CervezasModel;
+  private $DistribuidorModel;
   
 
   function __construct()
@@ -14,12 +16,16 @@ class cervezaController
 
     $this->CervezasView = new tiposDeCervezaView();
     $this->CervezasModel = new cervezaModel();
+    $this->DistribuidorModel = new distribuidorModel();
+
     
   }
 
   function mostrarCerveza(){
     $cervezas = $this->CervezasModel->GetAll();
-    $this->CervezasView->mostrar($cervezas);
+    $creador = $this->DistribuidorModel->GetAll();
+    $this->CervezasView->mostrar($cervezas,$creador);
+
 }
 
 function editarCerveza($params){
@@ -46,9 +52,37 @@ function GuardarEditarCerveza($id_cerveza){
     header("Location: http://" . $_SERVER["SERVER_NAME"] . dirname($_SERVER["PHP_SELF"]) . "/tiposDeCerveza");
   }
 
-
   function Delete($param){
     $this->CervezasModel->Delete($param[0]);
+    header("Location: http://" . $_SERVER["SERVER_NAME"] . dirname($_SERVER["PHP_SELF"]) . "/tiposDeCerveza");
+  }
+
+  //distribuidor
+
+  function InsertDistribuidor(){
+    $nombre = $_POST["nombre"];
+    $localidad = $_POST["localidad"];
+    $this->DistribuidorModel->Insert($nombre,$localidad);
+    header("Location: http://" . $_SERVER["SERVER_NAME"] . dirname($_SERVER["PHP_SELF"]) . "/tiposDeCerveza");
+  }
+
+  function DeleteDistribuidor($param){
+    $this->DistribuidorModel->Delete($param[0]);
+    header("Location: http://" . $_SERVER["SERVER_NAME"] . dirname($_SERVER["PHP_SELF"]) . "/tiposDeCerveza");
+  }
+
+  function editarDistribuidor($params){
+    $id_creador = $params[0];
+    $creador = $this->DistribuidorModel->Get($id_creador);
+    $this->CervezasView->mostrarEditarDistribuidor($creador);
+    
+  }
+  
+  
+  function GuardarEditarDistribuidor($id_creador){
+    $nombre = $_POST['nombreForm'];
+    $localidad = $_POST['precioForm'];
+    $this->DistribuidorModel->GuardarEditarCreador($nombre,$localidad,$id_creador[0]);
     header("Location: http://" . $_SERVER["SERVER_NAME"] . dirname($_SERVER["PHP_SELF"]) . "/tiposDeCerveza");
   }
 

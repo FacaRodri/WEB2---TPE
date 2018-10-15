@@ -14,6 +14,7 @@
         <h3 class="letraTiposDeCerveza">TIPOS DE CERVEZA</h3>
 
         {include file="cerveza.tpl"}
+        {include file="distribuidor.tpl"}
           
       </div>
       <div class="col-md-2 ">
