@@ -41,16 +41,14 @@ function GuardarEditarCerveza(){
   function InsertCerveza(){
     $nombre = $_POST["nombre"];
     $precio = $_POST["precio"];
-
-    
     $this->CervezasModel->Insert($nombre,$precio);
     header("Location: http://" . $_SERVER["SERVER_NAME"] . dirname($_SERVER["PHP_SELF"]) . "/tiposDeCerveza");
   }
 
 
-  function Delete($id_cerveza){
-    $this->CervezasModel->Delete($id_cerveza);
-    header("Location: http://".$_SERVER["SERVER_NAME"] . dirname($_SERVER["PHP_SELF"]));
+  function Delete($param){
+    $this->CervezasModel->Delete($param[0]);
+    header("Location: http://" . $_SERVER["SERVER_NAME"] . dirname($_SERVER["PHP_SELF"]) . "/tiposDeCerveza");
   }
 
   
