@@ -14,7 +14,9 @@ class ConfigApp
       'login' => 'navigationController#login',
       'InsertCerveza' => 'cervezaController#InsertCerveza',
       'editarCerveza' => 'cervezaController#editarCerveza',
+      'GuardarEditarCerveza' => 'cervezaController#GuardarEditarCerveza',
       'Delete' => 'cervezaController#Delete'
+
     ];
 
 }
