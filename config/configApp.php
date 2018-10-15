@@ -5,7 +5,7 @@ class ConfigApp
     public static $ACTION = 'action';
     public static $PARAMS = 'params';
     public static $ACTIONS = [
-      ''=> 'navigationController#home',
+      ' '=> 'navigationController#home',
       'home'=> 'navigationController#home',
       'tiposDeCerveza'=> 'cervezaController#mostrarCerveza',
       'contacto'=> 'navigationController#contacto',

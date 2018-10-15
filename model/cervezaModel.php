@@ -23,7 +23,7 @@ class cervezaModel
 
   function Get($id_cerveza){
       $sentencia = $this->db->prepare( "select * from cerveza where id_cerveza = ?");
-      $sentencia->execute(array($id_cerveza[0]));
+      $sentencia->execute(array($id_cerveza));
       return $sentencia->fetch(PDO::FETCH_ASSOC);
   }
 
@@ -38,8 +38,8 @@ class cervezaModel
   }
 
   function GuardarEditarCerveza($nombre,$precio,$id_cerveza){
-    $sentencia = $this->db->prepare( "update from cerveza set nombre = ?, precio = ?, where id_cerveza = ?");
-    $sentencia->execute(array($nombre,$precio,$id_cerveza[0]));
+    $sentencia = $this->db->prepare("UPDATE cerveza set nombre = ?, precio = ? where id_cerveza = ?");
+    $sentencia->execute(array($nombre,$precio,$id_cerveza));
   }
 
 }
