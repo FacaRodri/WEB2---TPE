@@ -23,7 +23,7 @@ class tiposDeCervezaView{
     
     function mostrarEditarDistribuidor($creador){
         $this->smarty->assign('creador', $creador);
-        $this->smarty->display('templates/editarCreador.tpl');
+        $this->smarty->display('templates/editarDistribuidor.tpl');
 
         
     }

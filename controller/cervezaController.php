@@ -74,14 +74,12 @@ function GuardarEditarCerveza($id_cerveza){
   function editarDistribuidor($params){
     $id_creador = $params[0];
     $creador = $this->DistribuidorModel->Get($id_creador);
-    $this->CervezasView->mostrarEditarDistribuidor($creador);
-    
+    $this->CervezasView->mostrarEditarDistribuidor($creador); 
   }
   
-  
   function GuardarEditarDistribuidor($id_creador){
-    $nombre = $_POST['nombreForm'];
-    $localidad = $_POST['precioForm'];
+    $nombre = $_POST['nombreFormC'];
+    $localidad = $_POST['localidadFormC'];
     $this->DistribuidorModel->GuardarEditarCreador($nombre,$localidad,$id_creador[0]);
     header("Location: http://" . $_SERVER["SERVER_NAME"] . dirname($_SERVER["PHP_SELF"]) . "/tiposDeCerveza");
   }

@@ -22,8 +22,7 @@ class distribuidorModel
   }
 
   function Get($id_creador){
-
-      $sentencia = $this->db->prepare( "select * from distribuidor where id=?");
+      $sentencia = $this->db->prepare( "select * from distribuidor where id_creador = ?");
       $sentencia->execute(array($id_creador));
       return $sentencia->fetch(PDO::FETCH_ASSOC);
   }
@@ -39,7 +38,7 @@ class distribuidorModel
   }
 
   function GuardarEditarCreador($nombre,$localidad,$id_creador){
-    $sentencia = $this->db->prepare( "UPDATE distribuidor set nombre = ?, localidad = ? where id_creador=?");
+    $sentencia = $this->db->prepare( "UPDATE distribuidor set nombre = ?, localidad = ? where id_creador = ?");
     $sentencia->execute(array($nombre,$localidad,$id_creador));
   }
 

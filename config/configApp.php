@@ -18,6 +18,7 @@ class ConfigApp
       'Delete' => 'cervezaController#Delete',
       'InsertDistribuidor' => 'cervezaController#InsertDistribuidor',
       'DeleteDistribuidor' => 'cervezaController#DeleteDistribuidor',
+      'editarDistribuidor' => 'cervezaController#editarDistribuidor',
       'GuardarEditarDistribuidor' => 'cervezaController#GuardarEditarDistribuidor'
 
 
