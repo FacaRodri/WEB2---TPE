@@ -3,8 +3,9 @@
 require_once  "./view/tiposDeCervezaView.php";
 require_once  "./model/cervezaModel.php";
 require_once  "./model/distribuidorModel.php";
+require_once  "./controller/securedController.php";
 
-class cervezaController
+class cervezaController extends securedController
 {
   private $CervezasView;
   private $CervezasModel;
@@ -13,12 +14,10 @@ class cervezaController
 
   function __construct()
   {
-
+    parent::__construct();
     $this->CervezasView = new tiposDeCervezaView();
     $this->CervezasModel = new cervezaModel();
     $this->DistribuidorModel = new distribuidorModel();
-
-    
   }
 
   function mostrarCerveza(){
@@ -27,6 +26,8 @@ class cervezaController
     $this->CervezasView->mostrar($cervezas,$creador);
 
 }
+
+
 
 function editarCerveza($params){
   $id_cerveza = $params[0];

@@ -1,31 +1,29 @@
 <?php
-/* Smarty version 3.1.33, created on 2018-10-09 22:07:45
+/* Smarty version 3.1.33, created on 2018-10-16 23:25:48
   from 'C:\xampp\htdocs\WikiBeerTPE\templates\informacionCurso.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.33',
-  'unifunc' => 'content_5bbd0a915831b3_98874737',
+  'unifunc' => 'content_5bc6575ce7c039_43917212',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '841fe5f8e2ca0658b7b641414b30a9824597bfaa' => 
     array (
       0 => 'C:\\xampp\\htdocs\\WikiBeerTPE\\templates\\informacionCurso.tpl',
-      1 => 1539115555,
+      1 => 1539357878,
       2 => 'file',
     ),
   ),
   'includes' => 
   array (
     'file:header.tpl' => 1,
-    'file:nav.tpl' => 1,
     'file:footer.tpl' => 1,
   ),
 ),false)) {
-function content_5bbd0a915831b3_98874737 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5bc6575ce7c039_43917212 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_subTemplateRender("file:header.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
-$_smarty_tpl->_subTemplateRender("file:nav.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
 ?>
 <div class="container-fluid" id="container">
     <div class="row">

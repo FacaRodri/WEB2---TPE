@@ -1,7 +1,9 @@
 <?php
 
     include_once "./view/navDefaultView.php";
-
+    // require_once  "./view/tiposDeCervezaView.php";
+    require_once  "./model/cervezaModel.php";
+    require_once  "./model/distribuidorModel.php";
 
     class navigationController {
         private $navDefaultView;
@@ -29,6 +31,12 @@
             $this->navDefaultView->login();
 
         }
+        function mostrarCervezaVisitante(){
+            $cervezas = $this->CervezasModel->GetAll();
+            $creador = $this->DistribuidorModel->GetAll();
+            $this->CervezasView->mostrarVisitante($cervezas,$creador);
+          
+          }
     }
 
 

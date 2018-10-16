@@ -1,32 +1,48 @@
 <?php
-/* Smarty version 3.1.33, created on 2018-10-16 15:25:35
+/* Smarty version 3.1.33, created on 2018-10-16 23:24:49
   from 'C:\xampp\htdocs\WikiBeerTPE\templates\editarDistribuidor.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.33',
-  'unifunc' => 'content_5bc5e6cf85d1f2_43203579',
+  'unifunc' => 'content_5bc657212922c3_60057304',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '6381175e7696c88dc9d9a2d00303947141b32c94' => 
     array (
       0 => 'C:\\xampp\\htdocs\\WikiBeerTPE\\templates\\editarDistribuidor.tpl',
-      1 => 1539696333,
+      1 => 1539725076,
       2 => 'file',
     ),
   ),
   'includes' => 
   array (
-    'file:header.tpl' => 1,
+    'file:nav.tpl' => 1,
     'file:footer.tpl' => 1,
   ),
 ),false)) {
-function content_5bc5e6cf85d1f2_43203579 (Smarty_Internal_Template $_smarty_tpl) {
-$_smarty_tpl->_subTemplateRender("file:header.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
-?>
+function content_5bc657212922c3_60057304 (Smarty_Internal_Template $_smarty_tpl) {
+?><!DOCTYPE html>
+<html lang="en">
 
-    <div class="container">
+<head>
+    <link rel="stylesheet" href="../css/bootstrap.min.css">
+    <link rel="stylesheet" href="../css/style.css">
+    <meta charset="UTF-8">
+    <base href="http://localhost/WikiBeerTPE/">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <base href="http://<?php echo $_SERVER['SERVER_NAME'];?>
+/WikiBeerTPE/">
+    <title>WikiBeer!</title>
+</head>
+
+
+
+<?php $_smarty_tpl->_subTemplateRender("file:nav.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
+?>
+    <div class="container-fluid">
       <h2>EDITAR</h2>
       <form action="GuardarEditarDistribuidor/<?php echo $_smarty_tpl->tpl_vars['creador']->value['id_creador'];?>
 " method="post">

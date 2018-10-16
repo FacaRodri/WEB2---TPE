@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.33, created on 2018-10-15 21:30:54
+/* Smarty version 3.1.33, created on 2018-10-16 23:21:25
   from 'C:\xampp\htdocs\WikiBeerTPE\templates\header.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.33',
-  'unifunc' => 'content_5bc4eaee944238_09023723',
+  'unifunc' => 'content_5bc6565520c220_27344603',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'a51240091d75de06066d499b6a12f9b833c43d96' => 
     array (
       0 => 'C:\\xampp\\htdocs\\WikiBeerTPE\\templates\\header.tpl',
-      1 => 1539631825,
+      1 => 1539724884,
       2 => 'file',
     ),
   ),
@@ -21,7 +21,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:nav.tpl' => 1,
   ),
 ),false)) {
-function content_5bc4eaee944238_09023723 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5bc6565520c220_27344603 (Smarty_Internal_Template $_smarty_tpl) {
 ?><!DOCTYPE html>
 <html lang="en">
 

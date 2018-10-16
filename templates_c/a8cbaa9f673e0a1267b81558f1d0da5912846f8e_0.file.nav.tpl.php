@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.33, created on 2018-10-10 21:52:53
+/* Smarty version 3.1.33, created on 2018-10-17 01:51:52
   from 'C:\xampp\htdocs\WikiBeerTPE\templates\nav.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.33',
-  'unifunc' => 'content_5bbe58958bc709_95850181',
+  'unifunc' => 'content_5bc6799814adb7_44767931',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'a8cbaa9f673e0a1267b81558f1d0da5912846f8e' => 
     array (
       0 => 'C:\\xampp\\htdocs\\WikiBeerTPE\\templates\\nav.tpl',
-      1 => 1539201172,
+      1 => 1539733595,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_5bbe58958bc709_95850181 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5bc6799814adb7_44767931 (Smarty_Internal_Template $_smarty_tpl) {
 ?><nav class="navbar navbar-expand-lg navbar-light ">
             <a class="navbar-brand homeLogo" class=".home" href="#">
                 <img src="img/logo.png" height="70" width="70" alt="" srcset="">
