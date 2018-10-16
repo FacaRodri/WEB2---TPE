@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.33, created on 2018-10-16 15:32:02
+/* Smarty version 3.1.33, created on 2018-10-16 16:26:54
   from 'C:\xampp\htdocs\WikiBeerTPE\templates\distribuidor.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.33',
-  'unifunc' => 'content_5bc5e852664611_16315450',
+  'unifunc' => 'content_5bc5f52ea5fa17_27630943',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '7aee0f8864d05117b1fbd6a831ffada46a932457' => 
     array (
       0 => 'C:\\xampp\\htdocs\\WikiBeerTPE\\templates\\distribuidor.tpl',
-      1 => 1539696720,
+      1 => 1539700010,
       2 => 'file',
     ),
   ),
@@ -20,9 +20,9 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_5bc5e852664611_16315450 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5bc5f52ea5fa17_27630943 (Smarty_Internal_Template $_smarty_tpl) {
 ?><div class="container-fluid">
-<table class="tablaTipos" align="center">
+<table class="tablaTipos" aling="center">
     <thead>
             <td>
               Distribuidor

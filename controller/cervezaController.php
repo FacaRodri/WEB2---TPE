@@ -48,8 +48,9 @@ function GuardarEditarCerveza($id_cerveza){
   function InsertCerveza(){
     $nombre = $_POST["nombre"];
     $precio = $_POST["precio"];
-    $this->CervezasModel->Insert($nombre,$precio);
-    header("Location: http://" . $_SERVER["SERVER_NAME"] . dirname($_SERVER["PHP_SELF"]) . "/tiposDeCerveza");
+    $id_creador = $_POST["id_creador"];
+    $this->CervezasModel->Insert($nombre,$precio,$id_creador);
+    //header("Location: http://" . $_SERVER["SERVER_NAME"] . dirname($_SERVER["PHP_SELF"]) . "/tiposDeCerveza");
   }
 
   function Delete($param){

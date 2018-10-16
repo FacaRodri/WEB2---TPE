@@ -27,9 +27,9 @@ class cervezaModel
       return $sentencia->fetch(PDO::FETCH_ASSOC);
   }
 
-  function Insert($nombre,$precio){
-    $sentencia = $this->db->prepare("INSERT INTO cerveza(nombre,precio) VALUES(?,?)");
-    $sentencia->execute(array($nombre,$precio));      
+  function Insert($nombre,$precio,$id_creador){
+    $sentencia = $this->db->prepare("INSERT INTO cerveza(nombre,precio,id_creador) VALUES(?,?,?)");
+    $sentencia->execute(array($nombre,$precio,$id_creador));      
   }
 
   function Delete($id_cerveza){

@@ -1,5 +1,5 @@
 <div class="container-fluid">
-<table class="tablaTipos" align="center">
+<table class="tablaTipos" aling="center">
     <thead>
             <td>
               Distribuidor
