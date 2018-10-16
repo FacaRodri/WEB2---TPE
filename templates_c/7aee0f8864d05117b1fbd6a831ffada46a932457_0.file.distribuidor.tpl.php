@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.33, created on 2018-10-16 14:50:39
+/* Smarty version 3.1.33, created on 2018-10-16 15:32:02
   from 'C:\xampp\htdocs\WikiBeerTPE\templates\distribuidor.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.33',
-  'unifunc' => 'content_5bc5de9f04c830_83276179',
+  'unifunc' => 'content_5bc5e852664611_16315450',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '7aee0f8864d05117b1fbd6a831ffada46a932457' => 
     array (
       0 => 'C:\\xampp\\htdocs\\WikiBeerTPE\\templates\\distribuidor.tpl',
-      1 => 1539694213,
+      1 => 1539696720,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_5bc5de9f04c830_83276179 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5bc5e852664611_16315450 (Smarty_Internal_Template $_smarty_tpl) {
 ?><div class="container-fluid">
 <table class="tablaTipos" align="center">
     <thead>
@@ -29,6 +29,12 @@ function content_5bc5de9f04c830_83276179 (Smarty_Internal_Template $_smarty_tpl)
             </td>
             <td>
               Localidad
+            </td>
+             <td>
+              Editar
+            </td>
+            <td>
+              Borrar
             </td>
           </thead>
       <ul class="list-group">

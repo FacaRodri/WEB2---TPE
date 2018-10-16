@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 12-10-2018 a las 21:05:42
+-- Tiempo de generación: 16-10-2018 a las 15:55:28
 -- Versión del servidor: 10.1.32-MariaDB
 -- Versión de PHP: 7.2.5
 
@@ -39,28 +39,7 @@ CREATE TABLE `cerveza` (
 --
 
 INSERT INTO `cerveza` (`id_cerveza`, `nombre`, `precio`) VALUES
-(1, 'prueba', 3),
-(2, 'prueba', 3),
-(3, 'prueba', 3),
-(4, 'prueba', 3),
-(5, 'prueba', 3),
-(6, 'prueba', 3),
-(7, 'prueba', 3),
-(8, 'prueba', 3),
-(9, 'prueba', 3),
-(10, 'as', 2),
-(11, 'asd', 2),
-(12, 'as', 2),
-(13, 'asdas', 22),
-(14, 'asdasd', 333),
-(15, 'asdasd2', 22),
-(16, 'asdasd', 33333),
-(17, 'asdsd2', 22),
-(18, '2345', 3456),
-(19, '12345', 234567),
-(20, 'gfds', 211),
-(21, 'fdsa', 1212),
-(22, 'fghjkjhgf43233', 333333);
+(30, 'daca', 12);
 
 -- --------------------------------------------------------
 
@@ -80,7 +59,8 @@ CREATE TABLE `distribuidor` (
 --
 
 INSERT INTO `distribuidor` (`id_creador`, `nombre`, `localidad`, `id_cerveza`) VALUES
-(1, 'Antares', 'Tandil', 1);
+(3, 'asd', '234', 0),
+(4, 'anda', 'seeeLocosee', 0);
 
 -- --------------------------------------------------------
 
@@ -91,7 +71,6 @@ INSERT INTO `distribuidor` (`id_creador`, `nombre`, `localidad`, `id_cerveza`) V
 CREATE TABLE `usuario` (
   `id_usuario` int(11) NOT NULL,
   `nombre` varchar(100) COLLATE latin1_spanish_ci NOT NULL,
-  `email` varchar(200) COLLATE latin1_spanish_ci NOT NULL,
   `clave` varchar(300) COLLATE latin1_spanish_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_spanish_ci;
 
@@ -126,13 +105,13 @@ ALTER TABLE `usuario`
 -- AUTO_INCREMENT de la tabla `cerveza`
 --
 ALTER TABLE `cerveza`
-  MODIFY `id_cerveza` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=23;
+  MODIFY `id_cerveza` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=31;
 
 --
 -- AUTO_INCREMENT de la tabla `distribuidor`
 --
 ALTER TABLE `distribuidor`
-  MODIFY `id_creador` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id_creador` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT de la tabla `usuario`

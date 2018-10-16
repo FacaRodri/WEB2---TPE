@@ -7,6 +7,12 @@
             <td>
               Localidad
             </td>
+             <td>
+              Editar
+            </td>
+            <td>
+              Borrar
+            </td>
           </thead>
       <ul class="list-group">
 
