@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.33, created on 2018-10-16 18:21:48
+/* Smarty version 3.1.33, created on 2018-10-16 23:02:18
   from 'C:\xampp\htdocs\WikiBeerTPE\templates\cerveza.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.33',
-  'unifunc' => 'content_5bc6101c9d8719_14169993',
+  'unifunc' => 'content_5bc651da8f1951_35267088',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '80d590eabdce7ed8a60fc466f6192b5540f62d40' => 
     array (
       0 => 'C:\\xampp\\htdocs\\WikiBeerTPE\\templates\\cerveza.tpl',
-      1 => 1539706764,
+      1 => 1539723737,
       2 => 'file',
     ),
   ),
@@ -20,10 +20,8 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_5bc6101c9d8719_14169993 (Smarty_Internal_Template $_smarty_tpl) {
-$_smarty_tpl->_checkPlugins(array(0=>array('file'=>'C:\\xampp\\htdocs\\WikiBeerTPE\\libs\\plugins\\function.html_options.php','function'=>'smarty_function_html_options',),));
-?>
-<div class="container">
+function content_5bc651da8f1951_35267088 (Smarty_Internal_Template $_smarty_tpl) {
+?><div class="container">
 <table class="tablaTipos" aling="center">
     <thead>
             <td>
@@ -33,7 +31,7 @@ $_smarty_tpl->_checkPlugins(array(0=>array('file'=>'C:\\xampp\\htdocs\\WikiBeerT
               Precio
             </td>
             <td>
-              Distribuidor
+              ID Distribuidor
             </td>
             <td>
               Editar
@@ -53,6 +51,7 @@ foreach ($_from as $_smarty_tpl->tpl_vars['cerveza']->value) {
 ?>
         <tr><td><?php echo $_smarty_tpl->tpl_vars['cerveza']->value['nombre'];?>
 </td><td><?php echo $_smarty_tpl->tpl_vars['cerveza']->value['precio'];?>
+</td><td><?php echo $_smarty_tpl->tpl_vars['cerveza']->value['id_creador'];?>
 </td><td> <a href="editarCerveza/<?php echo $_smarty_tpl->tpl_vars['cerveza']->value['id_cerveza'];?>
 ">EDITAR</a> </td><td> <a href="Delete/<?php echo $_smarty_tpl->tpl_vars['cerveza']->value['id_cerveza'];?>
 ">BORRAR</a> </td></tr>
@@ -74,14 +73,15 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
         </div>
          <div class="form-group">
           <label for="tituloForm">Distribuidor</label>
-           <select name="creador">
+           <select name="id_creador">
                     <?php
 $_from = $_smarty_tpl->smarty->ext->_foreach->init($_smarty_tpl, $_smarty_tpl->tpl_vars['creador']->value, 'creadores');
 if ($_from !== null) {
 foreach ($_from as $_smarty_tpl->tpl_vars['creadores']->value) {
 ?>
-                          <?php echo smarty_function_html_options(array('values'=>$_smarty_tpl->tpl_vars['creador']->value['id_creador'],'output'=>$_smarty_tpl->tpl_vars['creador']->value['nombre']),$_smarty_tpl);?>
-
+                          <option value="<?php echo $_smarty_tpl->tpl_vars['creadores']->value['id_creador'];?>
+" > <?php echo $_smarty_tpl->tpl_vars['creadores']->value['nombre'];?>
+ </option>
                     <?php
 }
 }

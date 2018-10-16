@@ -8,7 +8,7 @@
               Precio
             </td>
             <td>
-              Distribuidor
+              ID Distribuidor
             </td>
             <td>
               Editar
@@ -22,7 +22,7 @@
       </ul>
     </div>
       {foreach from= $cervezas item=cerveza}
-        <tr><td>{$cerveza['nombre']}</td><td>{$cerveza['precio']}</td><td> <a href="editarCerveza/{$cerveza['id_cerveza']}">EDITAR</a> </td><td> <a href="Delete/{$cerveza['id_cerveza']}">BORRAR</a> </td></tr>
+        <tr><td>{$cerveza['nombre']}</td><td>{$cerveza['precio']}</td><td>{$cerveza['id_creador']}</td><td> <a href="editarCerveza/{$cerveza['id_cerveza']}">EDITAR</a> </td><td> <a href="Delete/{$cerveza['id_cerveza']}">BORRAR</a> </td></tr>
       {/foreach}
      
     <div class="container">
@@ -38,9 +38,9 @@
         </div>
          <div class="form-group">
           <label for="tituloForm">Distribuidor</label>
-           <select name="creador">
+           <select name="id_creador">
                     {foreach from=$creador item=creadores}
-                          {html_options values=$creador['id_creador'] output=$creador['nombre']}
+                          <option value="{$creadores['id_creador']}" > {$creadores['nombre']} </option>
                     {/foreach}  
             </select>
         </div>

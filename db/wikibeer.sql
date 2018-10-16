@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 16-10-2018 a las 15:55:28
+-- Tiempo de generación: 16-10-2018 a las 22:23:45
 -- Versión del servidor: 10.1.32-MariaDB
 -- Versión de PHP: 7.2.5
 
@@ -31,15 +31,9 @@ SET time_zone = "+00:00";
 CREATE TABLE `cerveza` (
   `id_cerveza` int(10) NOT NULL,
   `nombre` varchar(50) COLLATE latin1_spanish_ci NOT NULL,
-  `precio` int(100) NOT NULL
+  `precio` int(100) NOT NULL,
+  `id_creador` int(10) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_spanish_ci;
-
---
--- Volcado de datos para la tabla `cerveza`
---
-
-INSERT INTO `cerveza` (`id_cerveza`, `nombre`, `precio`) VALUES
-(30, 'daca', 12);
 
 -- --------------------------------------------------------
 
@@ -50,17 +44,16 @@ INSERT INTO `cerveza` (`id_cerveza`, `nombre`, `precio`) VALUES
 CREATE TABLE `distribuidor` (
   `id_creador` int(10) NOT NULL,
   `nombre` varchar(50) COLLATE latin1_spanish_ci NOT NULL,
-  `localidad` varchar(50) COLLATE latin1_spanish_ci NOT NULL,
-  `id_cerveza` int(10) NOT NULL
+  `localidad` varchar(50) COLLATE latin1_spanish_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_spanish_ci;
 
 --
 -- Volcado de datos para la tabla `distribuidor`
 --
 
-INSERT INTO `distribuidor` (`id_creador`, `nombre`, `localidad`, `id_cerveza`) VALUES
-(3, 'asd', '234', 0),
-(4, 'anda', 'seeeLocosee', 0);
+INSERT INTO `distribuidor` (`id_creador`, `nombre`, `localidad`) VALUES
+(8, 'Antares', 'Mar del Plata'),
+(9, 'Eze', 'El cielo');
 
 -- --------------------------------------------------------
 
@@ -82,14 +75,14 @@ CREATE TABLE `usuario` (
 -- Indices de la tabla `cerveza`
 --
 ALTER TABLE `cerveza`
-  ADD PRIMARY KEY (`id_cerveza`);
+  ADD PRIMARY KEY (`id_cerveza`),
+  ADD KEY `id_creador` (`id_creador`);
 
 --
 -- Indices de la tabla `distribuidor`
 --
 ALTER TABLE `distribuidor`
-  ADD PRIMARY KEY (`id_creador`),
-  ADD KEY `id_cerveza` (`id_cerveza`);
+  ADD PRIMARY KEY (`id_creador`);
 
 --
 -- Indices de la tabla `usuario`
@@ -105,19 +98,29 @@ ALTER TABLE `usuario`
 -- AUTO_INCREMENT de la tabla `cerveza`
 --
 ALTER TABLE `cerveza`
-  MODIFY `id_cerveza` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=31;
+  MODIFY `id_cerveza` int(10) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT de la tabla `distribuidor`
 --
 ALTER TABLE `distribuidor`
-  MODIFY `id_creador` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id_creador` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 
 --
 -- AUTO_INCREMENT de la tabla `usuario`
 --
 ALTER TABLE `usuario`
   MODIFY `id_usuario` int(11) NOT NULL AUTO_INCREMENT;
+
+--
+-- Restricciones para tablas volcadas
+--
+
+--
+-- Filtros para la tabla `cerveza`
+--
+ALTER TABLE `cerveza`
+  ADD CONSTRAINT `cerveza_ibfk_1` FOREIGN KEY (`id_creador`) REFERENCES `distribuidor` (`id_creador`);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
