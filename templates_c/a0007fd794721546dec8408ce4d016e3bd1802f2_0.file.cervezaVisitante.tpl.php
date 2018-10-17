@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.33, created on 2018-10-17 02:29:07
+/* Smarty version 3.1.33, created on 2018-10-17 19:07:07
   from 'C:\xampp\htdocs\WikiBeerTPE\templates\cervezaVisitante.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.33',
-  'unifunc' => 'content_5bc68253531e86_78982927',
+  'unifunc' => 'content_5bc76c3bd29849_95919143',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'a0007fd794721546dec8408ce4d016e3bd1802f2' => 
     array (
       0 => 'C:\\xampp\\htdocs\\WikiBeerTPE\\templates\\cervezaVisitante.tpl',
-      1 => 1539736143,
+      1 => 1539795975,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_5bc68253531e86_78982927 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5bc76c3bd29849_95919143 (Smarty_Internal_Template $_smarty_tpl) {
 ?><div class="container-fluid">
 <table class="tablaTipos" aling="center">
     <thead>
@@ -31,7 +31,10 @@ function content_5bc68253531e86_78982927 (Smarty_Internal_Template $_smarty_tpl)
               Precio
             </td>
             <td>
-              ID Distribuidor
+              Distribuidor
+            </td>
+            <td>
+              Localidad
             </td>
           </thead>
       <ul class="list-group">
@@ -39,13 +42,13 @@ function content_5bc68253531e86_78982927 (Smarty_Internal_Template $_smarty_tpl)
       </ul>
     </div>
       <?php
-$_from = $_smarty_tpl->smarty->ext->_foreach->init($_smarty_tpl, $_smarty_tpl->tpl_vars['cervezas']->value, 'cerveza');
+$_from = $_smarty_tpl->smarty->ext->_foreach->init($_smarty_tpl, $_smarty_tpl->tpl_vars['tabla']->value, 'fila');
 if ($_from !== null) {
-foreach ($_from as $_smarty_tpl->tpl_vars['cerveza']->value) {
+foreach ($_from as $_smarty_tpl->tpl_vars['fila']->value) {
 ?>
-        <tr><td><?php echo $_smarty_tpl->tpl_vars['cerveza']->value['nombre'];?>
-</td><td><?php echo $_smarty_tpl->tpl_vars['cerveza']->value['precio'];?>
-</td><td><?php echo $_smarty_tpl->tpl_vars['cerveza']->value['id_creador'];?>
+        <tr><td><?php echo $_smarty_tpl->tpl_vars['fila']->value['nombre'];?>
+</td><td><?php echo $_smarty_tpl->tpl_vars['fila']->value['precio'];?>
+</td><td><?php echo $_smarty_tpl->tpl_vars['fila']->value['creador'];?>
 </td></tr>
       <?php
 }

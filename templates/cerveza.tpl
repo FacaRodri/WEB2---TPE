@@ -47,5 +47,4 @@
         <button type="submit" class="btn btn-primary">Agregar</button>
       </form>
       </table>
-      {$creador|@print_r}
     </div>

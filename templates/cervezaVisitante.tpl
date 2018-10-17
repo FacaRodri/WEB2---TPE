@@ -18,7 +18,7 @@
 
       </ul>
     </div>
-      {foreach from= $tabla item=fila}
+      {foreach from=$tabla item=fila}
         <tr><td>{$fila['nombre']}</td><td>{$fila['precio']}</td><td>{$fila['creador']}</td></tr>
       {/foreach}
      

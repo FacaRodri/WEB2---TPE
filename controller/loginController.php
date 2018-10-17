@@ -31,7 +31,6 @@ class loginController
       $dbUser = $this->Loginmodel->GetUser($nombre);
       if(!empty($dbUser)){
           if (password_verify($clave, $dbUser[0]['clave'])){
-              //mostrar lista de tareas
               session_start();
               $_SESSION["nombre"] = $nombre;
               header(tiposDeCerveza);
@@ -40,7 +39,6 @@ class loginController
 
           }
       }else{
-        //No existe el usario
         $this->Loginview->mostrarLogin("No existe el usario");
       }
 

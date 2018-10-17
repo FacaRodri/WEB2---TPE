@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.33, created on 2018-10-16 23:02:18
+/* Smarty version 3.1.33, created on 2018-10-17 19:12:18
   from 'C:\xampp\htdocs\WikiBeerTPE\templates\cerveza.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.33',
-  'unifunc' => 'content_5bc651da8f1951_35267088',
+  'unifunc' => 'content_5bc76d72964019_46472324',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '80d590eabdce7ed8a60fc466f6192b5540f62d40' => 
     array (
       0 => 'C:\\xampp\\htdocs\\WikiBeerTPE\\templates\\cerveza.tpl',
-      1 => 1539723737,
+      1 => 1539796288,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_5bc651da8f1951_35267088 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5bc76d72964019_46472324 (Smarty_Internal_Template $_smarty_tpl) {
 ?><div class="container">
 <table class="tablaTipos" aling="center">
     <thead>
@@ -91,7 +91,5 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
         <button type="submit" class="btn btn-primary">Agregar</button>
       </form>
       </table>
-      <?php echo print_r($_smarty_tpl->tpl_vars['creador']->value);?>
-
     </div><?php }
 }

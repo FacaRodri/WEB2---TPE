@@ -35,7 +35,7 @@
 
         }
         function mostrarCervezaVisitante(){
-            $tabla = $this->$CervezasModel->GetAllTable();
+            $tabla = $this->CervezasModel->GetAllTable();
             echo print_r($tabla);
             $this->navDefaultView->mostrarVisitante($tabla);
             
