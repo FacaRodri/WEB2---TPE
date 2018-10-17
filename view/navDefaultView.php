@@ -21,10 +21,19 @@ class navDefaultView {
     }
     function inscripcionCurso(){
         $this->smarty->display('templates/inscripcionCurso.tpl');
-  
+        
     }
     function login(){
         $this->smarty->display('templates/login.tpl');
+    }
+    function tiposDeCervezaVisitante(){
+        $this->smarty->display('templates/tiposDeCervezaVisitante.tpl');
+
+    }
+    function mostrarVisitante($tabla){
+        $this->smarty->assign('tabla', $tabla);
+        $this->smarty->display('templates/tiposDeCervezaVisitante.tpl');
+        
     }
 
 

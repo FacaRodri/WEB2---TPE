@@ -41,7 +41,13 @@ class cervezaModel
     $sentencia = $this->db->prepare("UPDATE cerveza set nombre = ?, precio = ? where id_cerveza = ?");
     $sentencia->execute(array($nombre,$precio,$id_cerveza));
   }
+  function GetAllTable(){
+    $sentencia = $this->db->prepare("SELECT c.nombre,c.precio,d.nombre as creador,d.localidad FROM cerveza c, distribuidor d WHERE c.id_creador = d.id_creador");    
+    $sentencia->execute();
+    return $sentencia->fetchAll(PDO::FETCH_ASSOC);
 
+
+  }
 }
 
  ?>
