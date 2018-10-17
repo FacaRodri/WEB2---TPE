@@ -6,7 +6,7 @@
         function Mostrar($Usuarios){
             $smarty = new Smarty();
             $smarty->assign('Usuarios',$Usuarios);
-            //$smarty->debugging = true;
+            $smarty->debugging = true;
             $smarty->display('templates/mostrarUsuarios.tpl');
         }
     }

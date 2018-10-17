@@ -4,7 +4,7 @@
     require_once  "./model/cervezaModel.php";
     require_once  "./model/distribuidorModel.php";
 
-    class navigationController {
+    class navigationController{
         private $navDefaultView;
         private $CervezasModel;
         private $DistribuidorModel;
@@ -30,13 +30,9 @@
             $this->navDefaultView->inscripcionCurso();
 
         }
-        function login(){
-            $this->navDefaultView->login();
-
-        }
+        
         function mostrarCervezaVisitante(){
             $tabla = $this->CervezasModel->GetAllTable();
-            echo print_r($tabla);
             $this->navDefaultView->mostrarVisitante($tabla);
             
           }

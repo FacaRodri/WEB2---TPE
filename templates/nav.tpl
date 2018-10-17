@@ -13,12 +13,26 @@
                         <a class="nav-link home" href="home">HOME
                             <span class="sr-only">(current)</span>
                         </a>
-                        <li class="nav-item">
-                                <a class="nav-link login" href="login">LOGIN</a>
+                        {if (isset($smarty.session.nombre))}
+                            <li class="nav-item">
+                                <a class="nav-link" href="logout">LOGOUT</a>
                             </li>
+                            {else}
+                            <li class="nav-item">
+                                <a class="nav-link" href="login">LOGIN</a>
+                            </li>
+                        {/if}
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link tipos"  href="tiposDeCervezaVisitante">TIPOS DE CERVEZA</a>
+                                {if (isset($smarty.session.nombre))}
+                            <li class="nav-item">
+                                <a class="nav-link" href="tiposDeCerveza">TIPOS DE CERVEZA</a>
+                            </li>
+                            {else}
+                            <li class="nav-item">
+                                <a class="nav-link" href="tiposDeCervezaVisitante">TIPOS DE CERVEZA</a>
+                            </li>
+                        {/if}                 
                     </li>
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true"

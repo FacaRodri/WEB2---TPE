@@ -2,6 +2,7 @@
 
 require_once  "./view/usuarioView.php";
 require_once  "./model/usuarioModel.php";
+require_once  "./controller/securedController.php";
 
 class usuarioController extends securedController
 {

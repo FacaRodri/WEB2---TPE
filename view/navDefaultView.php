@@ -4,12 +4,15 @@ include_once "./libs/smarty.class.php";
 
 class navDefaultView {
     private $smarty;
+    private $SESSION;
 
     function __construct(){
         $this->smarty = new Smarty();
+        $this->SESSION = session_start();
     }
 
     function home(){
+        $this->SESSION;
         $this->smarty->display('templates/home.tpl');
     }
 

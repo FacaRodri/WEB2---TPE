@@ -7,16 +7,21 @@ require_once  "./model/usuarioModel.php";
 class loginController
 {
   private $Loginview;
-  private $Loginmodel;
+  private $Usermodel;
 
   function __construct()
   {
     $this->Loginview = new loginView();
-    $this->Loginmodel = new usuarioModel();
+    $this->Usermodel = new usuarioModel();
   }
 
   function login(){
-    $this->Loginview->mostrarLogin();
+    if(isset($_SESSION["nombre"])){        
+      $nombre = $_SESSION["nombre"];
+      $this->Loginview->mostrarLogin($nombre);
+    }else{
+      $this->Loginview->mostrarLogin(null);
+    }
   }
 
   function logout(){
@@ -28,7 +33,7 @@ class loginController
   function verificarLogin(){
       $nombre = $_POST["nombre"];
       $clave = $_POST["clave"];
-      $dbUser = $this->Loginmodel->GetUser($nombre);
+      $dbUser = $this->Usermodel->GetUser($nombre);
       if(!empty($dbUser)){
           if (password_verify($clave, $dbUser[0]['clave'])){
               session_start();
@@ -36,7 +41,6 @@ class loginController
               header(tiposDeCerveza);
           }else{
             $this->Loginview->mostrarLogin("Contraseña incorrecta");
-
           }
       }else{
         $this->Loginview->mostrarLogin("No existe el usario");
