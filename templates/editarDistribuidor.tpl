@@ -1,5 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
+<<<<<<< HEAD
+=======
+
+>>>>>>> 54ff3a51a34e914a863c338388873327ab4f8da6
 <head>
     <link rel="stylesheet" href="../css/bootstrap.min.css">
     <link rel="stylesheet" href="../css/style.css">
@@ -10,6 +14,11 @@
     <base href="http://{$smarty.server.SERVER_NAME}/WikiBeerTPE/">
     <title>WikiBeer!</title>
 </head>
+<<<<<<< HEAD
+=======
+
+
+>>>>>>> 54ff3a51a34e914a863c338388873327ab4f8da6
 {include file="nav.tpl"}
     <div class="container-fluid">
       <h2>EDITAR</h2>
