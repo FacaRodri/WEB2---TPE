@@ -36,6 +36,12 @@
             $this->navDefaultView->mostrarVisitante($tabla);
             
           }
+        function creador($id_creador){
+            $creador = $this->CervezasModel->filtroCreador($id_creador);
+            $this->navDefaultView->mostrarVisitante($creador);
+        }
+
+        
     }
 
 

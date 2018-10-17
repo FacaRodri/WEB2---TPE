@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.33, created on 2018-10-17 22:26:50
-  from 'C:\xampp\htdocs\WikiBeerTPE\templates\cervezaVisitante.tpl' */
+/* Smarty version 3.1.33, created on 2018-10-17 22:18:24
+  from 'C:\xampp\htdocs\WikiBeerTPE\templates\creador.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.33',
-  'unifunc' => 'content_5bc79b0aba1d99_09809363',
+  'unifunc' => 'content_5bc79910a59992_17456482',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
-    'a0007fd794721546dec8408ce4d016e3bd1802f2' => 
+    'c77faff92e26384ee7cde678d0b090e540c5f5af' => 
     array (
-      0 => 'C:\\xampp\\htdocs\\WikiBeerTPE\\templates\\cervezaVisitante.tpl',
-      1 => 1539808009,
+      0 => 'C:\\xampp\\htdocs\\WikiBeerTPE\\templates\\creador.tpl',
+      1 => 1539807484,
       2 => 'file',
     ),
   ),
@@ -20,9 +20,8 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_5bc79b0aba1d99_09809363 (Smarty_Internal_Template $_smarty_tpl) {
-?>
-<div class="container-fluid">
+function content_5bc79910a59992_17456482 (Smarty_Internal_Template $_smarty_tpl) {
+?><div class="container-fluid">
 <table class="tablaTipos" aling="center">
     <thead>
             <td>
@@ -55,8 +54,7 @@ foreach ($_from as $_smarty_tpl->tpl_vars['fila']->value) {
 </td><td><a href="creador/<?php echo $_smarty_tpl->tpl_vars['fila']->value['id_creador'];?>
 "><?php echo $_smarty_tpl->tpl_vars['fila']->value['creador'];?>
 </a></td><td><?php echo $_smarty_tpl->tpl_vars['fila']->value['localidad'];?>
-</td><td><a href="creador/<?php echo $_smarty_tpl->tpl_vars['fila']->value['id_creador'];?>
-">Mostrar</a></td></tr>
+</td><td>Mostrar</td></tr>
       <?php
 }
 }

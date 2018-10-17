@@ -25,7 +25,8 @@ class ConfigApp
       'GuardarEditarDistribuidor' => 'cervezaController#GuardarEditarDistribuidor',
       'login' => 'loginController#login',
       'logout' => 'loginController#logout',
-      'verificarLogin' => 'loginController#verificarLogin'
+      'verificarLogin' => 'loginController#verificarLogin',
+      'creador' => 'navigationController#creador'
       
 
 

@@ -36,8 +36,8 @@ class navDefaultView {
     function mostrarVisitante($tabla){
         $this->smarty->assign('tabla', $tabla);
         $this->smarty->display('templates/tiposDeCervezaVisitante.tpl');
-        
     }
+    
 
 
 }
