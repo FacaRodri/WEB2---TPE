@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.33, created on 2018-10-18 16:05:02
+/* Smarty version 3.1.33, created on 2018-10-18 16:51:18
   from 'C:\xampp\htdocs\WikiBeerTPE\templates\editarCerveza.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.33',
-  'unifunc' => 'content_5bc8930eb99459_86637968',
+  'unifunc' => 'content_5bc89de61ee775_44515130',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'b82eb5e53a0fb2381777858dc30ae0cf0f21289a' => 
     array (
       0 => 'C:\\xampp\\htdocs\\WikiBeerTPE\\templates\\editarCerveza.tpl',
-      1 => 1539871501,
+      1 => 1539874195,
       2 => 'file',
     ),
   ),
@@ -22,7 +22,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:footer.tpl' => 1,
   ),
 ),false)) {
-function content_5bc8930eb99459_86637968 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5bc89de61ee775_44515130 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_subTemplateRender("file:header.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
 ?>
     <div class="container-fluid" aling=center>

@@ -43,7 +43,7 @@ class loginController
             $this->Loginview->mostrarLogin("Contraseña incorrecta");
           }
       }else{
-        $this->Loginview->mostrarLogin("No existe el usario");
+        $this->Loginview->mostrarLogin("No existe el usuario");
       }
 
   }

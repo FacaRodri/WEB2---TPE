@@ -1,30 +1,27 @@
 <?php
-/* Smarty version 3.1.33, created on 2018-10-18 16:03:46
+/* Smarty version 3.1.33, created on 2018-10-18 16:53:28
   from 'C:\xampp\htdocs\WikiBeerTPE\templates\distribuidor.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.33',
-  'unifunc' => 'content_5bc892c2efb878_95538852',
+  'unifunc' => 'content_5bc89e683ed282_93643608',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '7aee0f8864d05117b1fbd6a831ffada46a932457' => 
     array (
       0 => 'C:\\xampp\\htdocs\\WikiBeerTPE\\templates\\distribuidor.tpl',
-      1 => 1539871366,
+      1 => 1539874406,
       2 => 'file',
     ),
   ),
   'includes' => 
   array (
-    'file:header.tpl' => 1,
   ),
 ),false)) {
-function content_5bc892c2efb878_95538852 (Smarty_Internal_Template $_smarty_tpl) {
-$_smarty_tpl->_subTemplateRender("file:header.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
-?>
-<div class="container-fluid">
+function content_5bc89e683ed282_93643608 (Smarty_Internal_Template $_smarty_tpl) {
+?><div class="container-fluid">
 <table class="tablaTipos" aling="center">
     <thead>
             <td>

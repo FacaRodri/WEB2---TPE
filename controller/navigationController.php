@@ -23,9 +23,11 @@
         function contacto(){
             $this->navDefaultView->contacto();
         }
+        
         function informacionCurso(){
             $this->navDefaultView->informacionCurso();
         }
+
         function inscripcionCurso(){
             $this->navDefaultView->inscripcionCurso();
 
@@ -36,6 +38,7 @@
             $this->navDefaultView->mostrarVisitante($tabla);
             
           }
+
         function creador($id_creador){
             $creador = $this->CervezasModel->filtroCreador($id_creador);
             $this->navDefaultView->mostrarVisitante($creador);

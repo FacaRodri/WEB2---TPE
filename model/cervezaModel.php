@@ -41,13 +41,13 @@ class cervezaModel
     $sentencia = $this->db->prepare("UPDATE cerveza set nombre = ?, precio = ? where id_cerveza = ?");
     $sentencia->execute(array($nombre,$precio,$id_cerveza));
   }
+
   function GetAllTable(){
-    $sentencia = $this->db->prepare("SELECT c.nombre,c.precio,d.id_creador,d.nombre as creador,d.localidad FROM cerveza c, distribuidor d WHERE c.id_creador = d.id_creador");    
+    $sentencia = $this->db->prepare("SELECT c.nombre,c.precio,d.id_creador,d.nombre as creador,d.localidad FROM cerveza c, distribuidor d WHERE c.id_creador = d.id_creador ORDER BY c.id_creador" );    
     $sentencia->execute();
     return $sentencia->fetchAll(PDO::FETCH_ASSOC);
-
-
   }
+
   function filtroCreador($id_creador){
     $sentencia = $this->db->prepare("SELECT c.nombre,c.precio,d.id_creador,d.nombre as creador,d.localidad FROM cerveza c, distribuidor d WHERE c.id_creador = d.id_creador AND d.id_creador = ?");    
     $sentencia->execute($id_creador);
