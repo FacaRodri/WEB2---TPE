@@ -8,9 +8,6 @@
               Precio
             </td>
             <td>
-              ID Distribuidor
-            </td>
-            <td>
               Editar
             </td>
             <td>
@@ -22,7 +19,11 @@
       </ul>
     </div>
       {foreach from= $cervezas item=cerveza}
-        <tr><td>{$cerveza['nombre']}</td><td>{$cerveza['precio']}</td><td>{$cerveza['id_creador']}</td><td> <a href="editarCerveza/{$cerveza['id_cerveza']}">EDITAR</a> </td><td> <a href="Delete/{$cerveza['id_cerveza']}">BORRAR</a> </td></tr>
+        <tr>
+        <td>{$cerveza['nombre']}</td>
+        <td>{$cerveza['precio']}</td>
+        <td> <a href="editarCerveza/{$cerveza['id_cerveza']}">EDITAR</a> </td>
+        <td> <a href="Delete/{$cerveza['id_cerveza']}">BORRAR</a> </td></tr>
       {/foreach}
      
     <div class="container">
