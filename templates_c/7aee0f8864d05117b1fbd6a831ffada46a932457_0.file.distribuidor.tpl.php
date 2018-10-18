@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.33, created on 2018-10-16 16:26:54
+/* Smarty version 3.1.33, created on 2018-10-18 07:15:30
   from 'C:\xampp\htdocs\WikiBeerTPE\templates\distribuidor.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.33',
-  'unifunc' => 'content_5bc5f52ea5fa17_27630943',
+  'unifunc' => 'content_5bc816f207fbb5_41944355',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '7aee0f8864d05117b1fbd6a831ffada46a932457' => 
     array (
       0 => 'C:\\xampp\\htdocs\\WikiBeerTPE\\templates\\distribuidor.tpl',
-      1 => 1539700010,
+      1 => 1539839720,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_5bc5f52ea5fa17_27630943 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5bc816f207fbb5_41944355 (Smarty_Internal_Template $_smarty_tpl) {
 ?><div class="container-fluid">
 <table class="tablaTipos" aling="center">
     <thead>
@@ -56,14 +56,14 @@ foreach ($_from as $_smarty_tpl->tpl_vars['distribuidor']->value) {
 }
 $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
     <div class="container">
-      <h2>Agregar Distribuidor</h2>
+      <h4 class="editar">AGREGAR DISTRIBUIDOR</h4>
       <form method="post" action="InsertDistribuidor">
         <div class="form-group">
-          <label for="tituloForm">Nombre</label>
+          <label for="tituloForm" class="editar">Nombre</label>
           <input type="text" class="form-control" id="tituloForm" name="nombre">
         </div>
         <div class="form-group">
-          <label for="descripcionForm">Localidad</label>
+          <label for="descripcionForm" class="editar">Localidad</label>
           <input type="text" class="form-control" id="descripcionForm" name="localidad">
         </div>
         <button type="submit" class="btn btn-primary">Agregar</button>

@@ -22,14 +22,14 @@
         <tr><td>{$distribuidor['nombre']}</td><td>{$distribuidor['localidad']}</td><td> <a href="editarDistribuidor/{$distribuidor['id_creador']}">EDITAR</a> </td><td> <a href="DeleteDistribuidor/{$distribuidor['id_creador']}">BORRAR</a> </td></tr>
       {/foreach}
     <div class="container">
-      <h2>Agregar Distribuidor</h2>
+      <h4 class="editar">AGREGAR DISTRIBUIDOR</h4>
       <form method="post" action="InsertDistribuidor">
         <div class="form-group">
-          <label for="tituloForm">Nombre</label>
+          <label for="tituloForm" class="editar">Nombre</label>
           <input type="text" class="form-control" id="tituloForm" name="nombre">
         </div>
         <div class="form-group">
-          <label for="descripcionForm">Localidad</label>
+          <label for="descripcionForm" class="editar">Localidad</label>
           <input type="text" class="form-control" id="descripcionForm" name="localidad">
         </div>
         <button type="submit" class="btn btn-primary">Agregar</button>

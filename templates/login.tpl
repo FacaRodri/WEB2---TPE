@@ -16,7 +16,7 @@
         
     <form class="form-signin text-center" method="post" action="verificarLogin">
       <img class="mb-4" src="img/logo.png" alt="" width="72" height="72">
-      <h1 class="h3 mb-3 font-weight-normal">Iniciar Sesion</h1>
+      <h1 class="h3 mb-3 font-weight-normal">INICIAR SESIOM</h1>
       <label for="inputUser" class="sr-only">Nombre de usuario</label>
       <input type="text" id="nombre" name="nombre" class="form-control" placeholder="User" required="" autofocus="">
       <br>

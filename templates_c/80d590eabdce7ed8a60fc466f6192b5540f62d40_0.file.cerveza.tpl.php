@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.33, created on 2018-10-17 19:12:18
+/* Smarty version 3.1.33, created on 2018-10-18 07:15:04
   from 'C:\xampp\htdocs\WikiBeerTPE\templates\cerveza.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.33',
-  'unifunc' => 'content_5bc76d72964019_46472324',
+  'unifunc' => 'content_5bc816d8a76b23_33878112',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '80d590eabdce7ed8a60fc466f6192b5540f62d40' => 
     array (
       0 => 'C:\\xampp\\htdocs\\WikiBeerTPE\\templates\\cerveza.tpl',
-      1 => 1539796288,
+      1 => 1539839681,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_5bc76d72964019_46472324 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5bc816d8a76b23_33878112 (Smarty_Internal_Template $_smarty_tpl) {
 ?><div class="container">
 <table class="tablaTipos" aling="center">
     <thead>
@@ -61,18 +61,18 @@ foreach ($_from as $_smarty_tpl->tpl_vars['cerveza']->value) {
 $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
      
     <div class="container">
-      <h2>Agregar cerveza</h2>
+      <h4 class="editar" >AGREGAR CERVEZA</h4>
       <form method="post" action="InsertCerveza">
         <div class="form-group">
-          <label for="nombre">Cerveza</label>
+          <label class="editar" for="nombre">Cerveza</label>
           <input type="text" class="form-control" id="nombre" name="nombre">
         </div>
         <div class="form-group">
-          <label for="precio">Precio</label>
+          <label class="editar" for="precio">Precio</label>
           <input type="text" class="form-control" id="precio" name="precio">
         </div>
          <div class="form-group">
-          <label for="tituloForm">Distribuidor</label>
+          <label class="editar" for="tituloForm">Distribuidor</label>
            <select name="id_creador">
                     <?php
 $_from = $_smarty_tpl->smarty->ext->_foreach->init($_smarty_tpl, $_smarty_tpl->tpl_vars['creador']->value, 'creadores');

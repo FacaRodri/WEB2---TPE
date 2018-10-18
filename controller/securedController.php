@@ -6,7 +6,7 @@ class securedController
   function __construct(){
     session_start();
     if(isset($_SESSION["nombre"])){
-      if (isset($_SESSION['LAST_ACTIVITY']) && (time() - $_SESSION['LAST_ACTIVITY'] > 20)) {
+      if (isset($_SESSION['LAST_ACTIVITY']) && (time() - $_SESSION['LAST_ACTIVITY'] > 200)) {
         $this->logout(); 
       }
         $_SESSION['LAST_ACTIVITY'] = time(); 

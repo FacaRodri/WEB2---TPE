@@ -26,18 +26,18 @@
       {/foreach}
      
     <div class="container">
-      <h2>Agregar cerveza</h2>
+      <h4 class="editar" >AGREGAR CERVEZA</h4>
       <form method="post" action="InsertCerveza">
         <div class="form-group">
-          <label for="nombre">Cerveza</label>
+          <label class="editar" for="nombre">Cerveza</label>
           <input type="text" class="form-control" id="nombre" name="nombre">
         </div>
         <div class="form-group">
-          <label for="precio">Precio</label>
+          <label class="editar" for="precio">Precio</label>
           <input type="text" class="form-control" id="precio" name="precio">
         </div>
          <div class="form-group">
-          <label for="tituloForm">Distribuidor</label>
+          <label class="editar" for="tituloForm">Distribuidor</label>
            <select name="id_creador">
                     {foreach from=$creador item=creadores}
                           <option value="{$creadores['id_creador']}" > {$creadores['nombre']} </option>
