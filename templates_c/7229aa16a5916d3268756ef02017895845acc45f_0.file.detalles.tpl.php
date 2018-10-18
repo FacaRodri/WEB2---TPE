@@ -1,30 +1,30 @@
 <?php
-/* Smarty version 3.1.33, created on 2018-10-17 23:13:08
-  from 'C:\xampp\htdocs\WikiBeerTPE\templates\creador.tpl' */
+/* Smarty version 3.1.33, created on 2018-10-18 03:22:48
+  from 'C:\xampp\htdocs\WikiBeerTPE\templates\detalles.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.33',
-  'unifunc' => 'content_5bc7a5e4835ad5_32134577',
+  'unifunc' => 'content_5bc7e068907a23_32832135',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
-    'c77faff92e26384ee7cde678d0b090e540c5f5af' => 
+    '7229aa16a5916d3268756ef02017895845acc45f' => 
     array (
-      0 => 'C:\\xampp\\htdocs\\WikiBeerTPE\\templates\\creador.tpl',
-      1 => 1539810646,
+      0 => 'C:\\xampp\\htdocs\\WikiBeerTPE\\templates\\detalles.tpl',
+      1 => 1539825766,
       2 => 'file',
     ),
   ),
   'includes' => 
   array (
     'file:nav.tpl' => 1,
+    'file:footer.tpl' => 1,
   ),
 ),false)) {
-function content_5bc7a5e4835ad5_32134577 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5bc7e068907a23_32832135 (Smarty_Internal_Template $_smarty_tpl) {
 ?><!DOCTYPE html>
 <html lang="en">
-
 <head>
     <link rel="stylesheet" href="../css/bootstrap.min.css">
     <link rel="stylesheet" href="../css/style.css">
@@ -36,9 +36,7 @@ function content_5bc7a5e4835ad5_32134577 (Smarty_Internal_Template $_smarty_tpl)
 /WikiBeerTPE/">
     <title>WikiBeer!</title>
 </head>
-
 <body>
-
 <?php $_smarty_tpl->_subTemplateRender("file:nav.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
 ?>
 <div class="container-fluid">
@@ -56,35 +54,23 @@ function content_5bc7a5e4835ad5_32134577 (Smarty_Internal_Template $_smarty_tpl)
             <td>
               Localidad
             </td>
-            <td>
-            Ver detalles
-            </td>
           </thead>
       <ul class="list-group">
 
       </ul>
     </div>
-      <?php
-$_from = $_smarty_tpl->smarty->ext->_foreach->init($_smarty_tpl, $_smarty_tpl->tpl_vars['tabla']->value, 'fila');
-if ($_from !== null) {
-foreach ($_from as $_smarty_tpl->tpl_vars['fila']->value) {
-?>
         <tr>
-        <td><?php echo $_smarty_tpl->tpl_vars['fila']->value['nombre'];?>
+          <td><?php echo $_smarty_tpl->tpl_vars['fila']->value['nombre'];?>
 </td>
-        <td>$<?php echo $_smarty_tpl->tpl_vars['fila']->value['precio'];?>
+          <td>$<?php echo $_smarty_tpl->tpl_vars['fila']->value['precio'];?>
 </td>
-        <td><a href="creador/<?php echo $_smarty_tpl->tpl_vars['fila']->value['id_creador'];?>
-"><?php echo $_smarty_tpl->tpl_vars['fila']->value['creador'];?>
-</a></td>
-        <td><?php echo $_smarty_tpl->tpl_vars['fila']->value['localidad'];?>
+          <td><?php echo $_smarty_tpl->tpl_vars['fila']->value['creador'];?>
 </td>
-        <td>Mostrar</td>
+          <td><?php echo $_smarty_tpl->tpl_vars['fila']->value['localidad'];?>
+</td>
         </tr>
-      <?php
-}
-}
-$_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
       </table>
-          </div><?php }
+          </div>
+          <?php $_smarty_tpl->_subTemplateRender("file:footer.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
+}
 }

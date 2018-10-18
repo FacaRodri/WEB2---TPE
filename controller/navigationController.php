@@ -41,7 +41,12 @@
             $this->navDefaultView->mostrarVisitante($creador);
         }
 
-        
+        function detalles($id_cerveza){
+            $fila = $this->CervezasModel->getDetalles($id_cerveza);
+            $this->navDefaultView->mostrarDetalles($fila);
+        }
+
+
     }
 
 
