@@ -1,3 +1,4 @@
+{include file="header.tpl"}
 <div class="container-fluid">
 <table class="tablaTipos" aling="center">
     <thead>

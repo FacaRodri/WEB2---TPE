@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.33, created on 2018-10-17 19:07:06
+/* Smarty version 3.1.33, created on 2018-10-18 16:03:19
   from 'C:\xampp\htdocs\WikiBeerTPE\templates\tiposDeCervezaVisitante.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.33',
-  'unifunc' => 'content_5bc76c3a80a0c2_64399105',
+  'unifunc' => 'content_5bc892a7da8539_35262530',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'e111c2c52410823b849666c16189f5081ff22338' => 
     array (
       0 => 'C:\\xampp\\htdocs\\WikiBeerTPE\\templates\\tiposDeCervezaVisitante.tpl',
-      1 => 1539737069,
+      1 => 1539871397,
       2 => 'file',
     ),
   ),
@@ -23,7 +23,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:footer.tpl' => 1,
   ),
 ),false)) {
-function content_5bc76c3a80a0c2_64399105 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5bc892a7da8539_35262530 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_subTemplateRender("file:header.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
 ?>
 <div class="container-fluid">

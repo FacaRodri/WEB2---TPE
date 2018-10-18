@@ -1,42 +1,29 @@
 <?php
-/* Smarty version 3.1.33, created on 2018-10-18 07:17:53
+/* Smarty version 3.1.33, created on 2018-10-18 16:05:02
   from 'C:\xampp\htdocs\WikiBeerTPE\templates\editarCerveza.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.33',
-  'unifunc' => 'content_5bc81781915294_30089134',
+  'unifunc' => 'content_5bc8930eb99459_86637968',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'b82eb5e53a0fb2381777858dc30ae0cf0f21289a' => 
     array (
       0 => 'C:\\xampp\\htdocs\\WikiBeerTPE\\templates\\editarCerveza.tpl',
-      1 => 1539839866,
+      1 => 1539871501,
       2 => 'file',
     ),
   ),
   'includes' => 
   array (
-    'file:nav.tpl' => 1,
+    'file:header.tpl' => 1,
     'file:footer.tpl' => 1,
   ),
 ),false)) {
-function content_5bc81781915294_30089134 (Smarty_Internal_Template $_smarty_tpl) {
-?><!DOCTYPE html>
-<html lang="en">
-<head>
-    <link rel="stylesheet" href="../css/bootstrap.min.css">
-    <link rel="stylesheet" href="../css/style.css">
-    <meta charset="UTF-8">
-    <base href="http://localhost/WikiBeerTPE/">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <base href="http://<?php echo $_SERVER['SERVER_NAME'];?>
-/WikiBeerTPE/">
-    <title>WikiBeer!</title>
-</head>
-<?php $_smarty_tpl->_subTemplateRender("file:nav.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
+function content_5bc8930eb99459_86637968 (Smarty_Internal_Template $_smarty_tpl) {
+$_smarty_tpl->_subTemplateRender("file:header.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
 ?>
     <div class="container-fluid" aling=center>
       <h2 class="editar">EDITAR CERVEZA</h2>
