@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 18-10-2018 a las 04:43:55
+-- Tiempo de generación: 18-10-2018 a las 17:26:05
 -- Versión del servidor: 10.1.32-MariaDB
 -- Versión de PHP: 7.2.5
 
@@ -41,14 +41,16 @@ CREATE TABLE `cerveza` (
 
 INSERT INTO `cerveza` (`id_cerveza`, `nombre`, `precio`, `id_creador`) VALUES
 (8, 'Black IPA', 300, 8),
-(14, 'IPA', 200, 12),
 (15, 'Honey', 200, 13),
 (16, 'Barley wine', 100, 13),
 (17, 'Scotish', 400, 14),
 (18, 'IPA ', 100, 14),
 (19, 'Blonde', 500, 14),
 (20, 'Blonde', 100, 12),
-(21, 'Imperial Stout', 200, 15);
+(21, 'Imperial Stout', 200, 15),
+(22, 'Cogollo IPA', 600, 12),
+(23, 'Ipa', 400, 13),
+(24, 'IPA', 100, 8);
 
 -- --------------------------------------------------------
 
@@ -71,7 +73,8 @@ INSERT INTO `distribuidor` (`id_creador`, `nombre`, `localidad`) VALUES
 (12, 'Gluck', 'Balcarce'),
 (13, 'Quarryman', 'Tandil'),
 (14, '713', 'Tandil'),
-(15, 'Patagonia', 'Bariloche');
+(15, 'Patagonia', 'Bariloche'),
+(16, 'Gluck', 'Tandil');
 
 -- --------------------------------------------------------
 
@@ -90,7 +93,7 @@ CREATE TABLE `usuario` (
 --
 
 INSERT INTO `usuario` (`id_usuario`, `nombre`, `clave`) VALUES
-(1, 'Faca', '$2y$12$OyKbUNv7MmFLEPMynJ3K5u7.m1PcAMfF3LMV7uf5.2JFZOml5cuk2');
+(1, 'adm', '$2y$12$OyKbUNv7MmFLEPMynJ3K5u7.m1PcAMfF3LMV7uf5.2JFZOml5cuk2');
 
 --
 -- Índices para tablas volcadas
@@ -123,13 +126,13 @@ ALTER TABLE `usuario`
 -- AUTO_INCREMENT de la tabla `cerveza`
 --
 ALTER TABLE `cerveza`
-  MODIFY `id_cerveza` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=22;
+  MODIFY `id_cerveza` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=25;
 
 --
 -- AUTO_INCREMENT de la tabla `distribuidor`
 --
 ALTER TABLE `distribuidor`
-  MODIFY `id_creador` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
+  MODIFY `id_creador` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
 
 --
 -- AUTO_INCREMENT de la tabla `usuario`
