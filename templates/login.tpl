@@ -16,9 +16,9 @@
         
     <form class="form-signin text-center" method="post" action="verificarLogin">
       <img class="mb-4" src="img/logo.png" alt="" width="72" height="72">
-      <h1 class="h3 mb-3 font-weight-normal">INICIAR SESIOM</h1>
+      <h1 class="h3 mb-3 font-weight-normal">INICIAR SESION</h1>
       <label for="inputUser" class="sr-only">Nombre de usuario</label>
-      <input type="text" id="nombre" name="nombre" class="form-control" placeholder="User" required="" autofocus="">
+      <input type="text" id="nombre" name="nombre" class="form-control" placeholder="Nombre de usuario" required="" autofocus="">
       <br>
       <label for="inputPassword" class="sr-only">Contraseña</label>
       <input type="password" id="clave" name="clave" class="form-control" placeholder="Contraseña" required="">
