@@ -11,6 +11,11 @@
           <label class="editar" for="precioForm">Editar Precio</label>
           <input type="number" class="form-control" id="precioForm" name="precioForm" placeholder="{$cerveza['precio']}"  value="{$cerveza['precio']}">
         </div>
+        <select name="id_creador">
+                    {foreach from=$creador item=creadores}
+                          <option value="{$creadores['id_creador']}" > {$creadores['nombre']} </option>
+                    {/foreach}  
+            </select>
         <button type="submit" class="btn btn-primary">Terminar Edicion</button>
       </form>
     </div>

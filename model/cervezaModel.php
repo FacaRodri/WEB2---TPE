@@ -31,15 +31,15 @@ class cervezaModel
     $sentencia = $this->db->prepare("INSERT INTO cerveza(nombre,precio,id_creador) VALUES(?,?,?)");
     $sentencia->execute(array($nombre,$precio,$id_creador));      
   }
-
+  
   function Delete($id_cerveza){
     $sentencia = $this->db->prepare( "delete from cerveza where id_cerveza=?");
     $sentencia->execute(array($id_cerveza));
   }
 
-  function GuardarEditarCerveza($nombre,$precio,$id_cerveza){
-    $sentencia = $this->db->prepare("UPDATE cerveza set nombre = ?, precio = ? where id_cerveza = ?");
-    $sentencia->execute(array($nombre,$precio,$id_cerveza));
+  function GuardarEditarCerveza($nombre,$precio,$nombreCreador,$id_cerveza,$id_creador){
+    $sentencia = $this->db->prepare("UPDATE cerveza c, distribuidor d set c.nombre = ?, c.precio = ?, d.nombre = ? where c.id_cerveza = d.id_creador and c.id_cerveza = ?");
+    $sentencia->execute(array($nombre,$precio,$nombreCreador,$id_cerveza,$id_creador));
   }
 
   function GetAllTable(){
@@ -62,6 +62,6 @@ class cervezaModel
   }
 
   
-}
+} 
 
  ?>

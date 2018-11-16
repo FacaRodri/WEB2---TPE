@@ -17,8 +17,9 @@ class tiposDeCervezaView{
     }
     
 
-    function mostrarEditarCerveza($cerveza){
+    function mostrarEditarCerveza($cerveza, $creador){
         $this->smarty->assign('cerveza', $cerveza);
+        $this->smarty->assign('creador', $creador);
         $this->smarty->display('templates/editarCerveza.tpl');
     } 
     

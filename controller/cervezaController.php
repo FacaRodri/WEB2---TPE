@@ -31,15 +31,18 @@ class cervezaController extends securedController
 
 function editarCerveza($params){
   $id_cerveza = $params[0];
+  $id_creador = $params[0];
   $cerveza = $this->CervezasModel->Get($id_cerveza);
-  $this->CervezasView->mostrarEditarCerveza($cerveza);
+  $creador = $this->DistribuidorModel->Get($id_creador);
+  $this->CervezasView->mostrarEditarCerveza($cerveza,$creador);
   
 }
 
-function GuardarEditarCerveza($id_cerveza){
+function GuardarEditarCerveza($id_cerveza,$id_creador){
   $nombre = $_POST['nombreForm'];
   $precio = $_POST['precioForm'];
-  $this->CervezasModel->GuardarEditarCerveza($nombre,$precio,$id_cerveza[0]);
+  $nombreCreador = $_POST['nombre'];
+  $this->CervezasModel->GuardarEditarCerveza($nombre,$precio,$nombreCreador,$id_cerveza[0],$id_creador[0]);
   header("Location: http://" . $_SERVER["SERVER_NAME"] . dirname($_SERVER["PHP_SELF"]) . "/tiposDeCerveza");
 }
 

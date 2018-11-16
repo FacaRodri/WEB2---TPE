@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 18-10-2018 a las 17:26:05
+-- Tiempo de generación: 16-11-2018 a las 19:41:06
 -- Versión del servidor: 10.1.32-MariaDB
 -- Versión de PHP: 7.2.5
 
@@ -40,7 +40,7 @@ CREATE TABLE `cerveza` (
 --
 
 INSERT INTO `cerveza` (`id_cerveza`, `nombre`, `precio`, `id_creador`) VALUES
-(8, 'Black IPA', 300, 8),
+(8, 'Black IPA', 400, 8),
 (15, 'Honey', 200, 13),
 (16, 'Barley wine', 100, 13),
 (17, 'Scotish', 400, 14),
@@ -50,7 +50,23 @@ INSERT INTO `cerveza` (`id_cerveza`, `nombre`, `precio`, `id_creador`) VALUES
 (21, 'Imperial Stout', 200, 15),
 (22, 'Cogollo IPA', 600, 12),
 (23, 'Ipa', 400, 13),
-(24, 'IPA', 100, 8);
+(24, 'IPA', 100, 8),
+(26, 'Blonde', 900, 17),
+(27, 'IPA', 400, 14);
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `comentario`
+--
+
+CREATE TABLE `comentario` (
+  `id_comentario` int(50) NOT NULL,
+  `puntaje` int(5) NOT NULL,
+  `comentario` text COLLATE latin1_spanish_ci NOT NULL,
+  `id_cerveza` int(11) NOT NULL,
+  `id_usuario` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_spanish_ci;
 
 -- --------------------------------------------------------
 
@@ -74,7 +90,7 @@ INSERT INTO `distribuidor` (`id_creador`, `nombre`, `localidad`) VALUES
 (13, 'Quarryman', 'Tandil'),
 (14, '713', 'Tandil'),
 (15, 'Patagonia', 'Bariloche'),
-(16, 'Gluck', 'Tandil');
+(17, 'Ogham', 'Tandil');
 
 -- --------------------------------------------------------
 
@@ -107,6 +123,14 @@ ALTER TABLE `cerveza`
   ADD KEY `id_creador` (`id_creador`);
 
 --
+-- Indices de la tabla `comentario`
+--
+ALTER TABLE `comentario`
+  ADD PRIMARY KEY (`id_comentario`),
+  ADD KEY `id_cerveza` (`id_cerveza`,`id_usuario`),
+  ADD KEY `id_usuario` (`id_usuario`);
+
+--
 -- Indices de la tabla `distribuidor`
 --
 ALTER TABLE `distribuidor`
@@ -126,13 +150,19 @@ ALTER TABLE `usuario`
 -- AUTO_INCREMENT de la tabla `cerveza`
 --
 ALTER TABLE `cerveza`
-  MODIFY `id_cerveza` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=25;
+  MODIFY `id_cerveza` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=28;
+
+--
+-- AUTO_INCREMENT de la tabla `comentario`
+--
+ALTER TABLE `comentario`
+  MODIFY `id_comentario` int(50) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT de la tabla `distribuidor`
 --
 ALTER TABLE `distribuidor`
-  MODIFY `id_creador` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
+  MODIFY `id_creador` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
 
 --
 -- AUTO_INCREMENT de la tabla `usuario`
@@ -149,6 +179,13 @@ ALTER TABLE `usuario`
 --
 ALTER TABLE `cerveza`
   ADD CONSTRAINT `cerveza_ibfk_1` FOREIGN KEY (`id_creador`) REFERENCES `distribuidor` (`id_creador`);
+
+--
+-- Filtros para la tabla `comentario`
+--
+ALTER TABLE `comentario`
+  ADD CONSTRAINT `comentario_ibfk_1` FOREIGN KEY (`id_usuario`) REFERENCES `usuario` (`id_usuario`),
+  ADD CONSTRAINT `comentario_ibfk_2` FOREIGN KEY (`id_cerveza`) REFERENCES `cerveza` (`id_cerveza`);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
