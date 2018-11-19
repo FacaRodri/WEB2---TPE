@@ -26,7 +26,7 @@
                     <li class="nav-item">
                              
                             <li class="nav-item">
-                                <a class="nav-link" href="tiposDeCervezaVisitante">TIPOS DE CERVEZA</a>
+                                <a class="nav-link" href="tiposDeCerveza">TIPOS DE CERVEZA</a>
                             </li>
                                        
                     </li>

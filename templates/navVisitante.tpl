@@ -13,15 +13,14 @@
                         <a class="nav-link home" href="home">HOME
                             <span class="sr-only">(current)</span>
                         </a>
-                        {if (isset($smarty.session.nombre))}
-                            <li class="nav-item">
-                                <a class="nav-link" href="logout">LOGOUT</a>
-                            </li>
-                            {else}
+                      
                             <li class="nav-item">
                                 <a class="nav-link" href="login">LOGIN</a>
                             </li>
-                        {/if}
+                            <li class="nav-item">
+                                <a class="nav-link" href="registro">REGISTRO</a>
+                            </li>
+                        
                     </li>
                     <li class="nav-item">
                              

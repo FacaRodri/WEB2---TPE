@@ -32,7 +32,10 @@ class usuarioModel
       $sentencia->execute(array($nombre));
       return $sentencia->fetchAll(PDO::FETCH_ASSOC);
   }
-
+  // function editarUsuario($id_usuario, $admin){
+  //   $sentencia = $this->db->prepare("UPDATE usuario SET admin=? WHERE id_usuario=?");
+  //   $sentencia->execute(array($admin, $id_usuario));
+  // }
 }
 
  ?>

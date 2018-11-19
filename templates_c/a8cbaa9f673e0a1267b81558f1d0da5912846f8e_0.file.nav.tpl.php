@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.33, created on 2018-10-17 21:25:06
+/* Smarty version 3.1.33, created on 2018-11-19 22:45:12
   from 'C:\xampp\htdocs\WikiBeerTPE\templates\nav.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.33',
-  'unifunc' => 'content_5bc78c92f14c28_84200815',
+  'unifunc' => 'content_5bf32ee8d87669_79220372',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'a8cbaa9f673e0a1267b81558f1d0da5912846f8e' => 
     array (
       0 => 'C:\\xampp\\htdocs\\WikiBeerTPE\\templates\\nav.tpl',
-      1 => 1539804305,
+      1 => 1542663791,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_5bc78c92f14c28_84200815 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5bf32ee8d87669_79220372 (Smarty_Internal_Template $_smarty_tpl) {
 ?><nav class="navbar navbar-expand-lg navbar-light ">
             <a class="navbar-brand homeLogo" class=".home" href="#">
                 <img src="img/logo.png" height="70" width="70" alt="" srcset="">
@@ -47,15 +47,11 @@ function content_5bc78c92f14c28_84200815 (Smarty_Internal_Template $_smarty_tpl)
                         <?php }?>
                     </li>
                     <li class="nav-item">
-                                <?php if ((isset($_SESSION['nombre']))) {?>
-                            <li class="nav-item">
-                                <a class="nav-link" href="tiposDeCerveza">TIPOS DE CERVEZA</a>
-                            </li>
-                            <?php } else { ?>
+                             
                             <li class="nav-item">
                                 <a class="nav-link" href="tiposDeCervezaVisitante">TIPOS DE CERVEZA</a>
                             </li>
-                        <?php }?>                 
+                                       
                     </li>
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true"

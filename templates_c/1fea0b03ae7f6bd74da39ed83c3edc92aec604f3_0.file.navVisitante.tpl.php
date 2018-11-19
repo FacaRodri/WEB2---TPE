@@ -1,4 +1,27 @@
-<nav class="navbar navbar-expand-lg navbar-light ">
+<?php
+/* Smarty version 3.1.33, created on 2018-11-19 23:53:46
+  from 'C:\xampp\htdocs\WikiBeerTPE\templates\navVisitante.tpl' */
+
+/* @var Smarty_Internal_Template $_smarty_tpl */
+if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
+  'version' => '3.1.33',
+  'unifunc' => 'content_5bf33efaa9c400_54170401',
+  'has_nocache_code' => false,
+  'file_dependency' => 
+  array (
+    '1fea0b03ae7f6bd74da39ed83c3edc92aec604f3' => 
+    array (
+      0 => 'C:\\xampp\\htdocs\\WikiBeerTPE\\templates\\navVisitante.tpl',
+      1 => 1542668025,
+      2 => 'file',
+    ),
+  ),
+  'includes' => 
+  array (
+  ),
+),false)) {
+function content_5bf33efaa9c400_54170401 (Smarty_Internal_Template $_smarty_tpl) {
+?><nav class="navbar navbar-expand-lg navbar-light ">
             <a class="navbar-brand homeLogo" class=".home" href="#">
                 <img src="img/logo.png" height="70" width="70" alt="" srcset="">
             </a>
@@ -13,15 +36,14 @@
                         <a class="nav-link home" href="home">HOME
                             <span class="sr-only">(current)</span>
                         </a>
-                        {if (isset($smarty.session.nombre))}
-                            <li class="nav-item">
-                                <a class="nav-link" href="logout">LOGOUT</a>
-                            </li>
-                            {else}
+                      
                             <li class="nav-item">
                                 <a class="nav-link" href="login">LOGIN</a>
                             </li>
-                        {/if}
+                            <li class="nav-item">
+                                <a class="nav-link" href="registro">REGISTRO</a>
+                            </li>
+                        
                     </li>
                     <li class="nav-item">
                              
@@ -46,4 +68,5 @@
                         </div>
                 </ul>
             </div>
-        </nav>
+        </nav><?php }
+}

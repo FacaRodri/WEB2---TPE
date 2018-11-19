@@ -4,6 +4,8 @@ require_once "config/ConfigApp.php";
 require_once "controller/navigationController.php";
 require_once "controller/cervezaController.php";
 require_once "controller/loginController.php";
+require_once "controller/usuarioController.php";
+
 
 function parseURL($url)
 {

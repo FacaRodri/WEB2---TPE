@@ -12,5 +12,12 @@
 </head>
 
 <body>
-
-{include file="nav.tpl"}
+   {if (isset($smarty.session.nombre))}
+  {if $smarty.session.admin == 1}
+    {include file="navAdmin.tpl"}
+  {else}
+    {include file='nav.tpl'}
+  {/if}
+{else}
+  {include file="navVisitante.tpl"}
+{/if}

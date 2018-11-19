@@ -27,7 +27,9 @@ class ConfigApp
       'logout' => 'loginController#logout',
       'verificarLogin' => 'loginController#verificarLogin',
       'creador' => 'navigationController#creador',
-      'detalles' => 'navigationController#detalles'
+      'detalles' => 'navigationController#detalles',
+      'registro' => 'usuarioController#registro',
+      'InsertUsuario' => 'usuarioController#InsertUsuario'
       
 
 

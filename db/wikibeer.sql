@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 16-11-2018 a las 19:41:06
+-- Tiempo de generación: 20-11-2018 a las 00:04:53
 -- Versión del servidor: 10.1.32-MariaDB
 -- Versión de PHP: 7.2.5
 
@@ -21,6 +21,8 @@ SET time_zone = "+00:00";
 --
 -- Base de datos: `wikibeer`
 --
+CREATE DATABASE IF NOT EXISTS `wikibeer` DEFAULT CHARACTER SET latin1 COLLATE latin1_spanish_ci;
+USE `wikibeer`;
 
 -- --------------------------------------------------------
 
@@ -101,15 +103,19 @@ INSERT INTO `distribuidor` (`id_creador`, `nombre`, `localidad`) VALUES
 CREATE TABLE `usuario` (
   `id_usuario` int(11) NOT NULL,
   `nombre` varchar(100) COLLATE latin1_spanish_ci NOT NULL,
-  `clave` varchar(300) COLLATE latin1_spanish_ci NOT NULL
+  `clave` varchar(300) COLLATE latin1_spanish_ci NOT NULL,
+  `admin` tinyint(1) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_spanish_ci;
 
 --
 -- Volcado de datos para la tabla `usuario`
 --
 
-INSERT INTO `usuario` (`id_usuario`, `nombre`, `clave`) VALUES
-(1, 'adm', '$2y$12$OyKbUNv7MmFLEPMynJ3K5u7.m1PcAMfF3LMV7uf5.2JFZOml5cuk2');
+INSERT INTO `usuario` (`id_usuario`, `nombre`, `clave`, `admin`) VALUES
+(1, 'adm', '$2y$12$OyKbUNv7MmFLEPMynJ3K5u7.m1PcAMfF3LMV7uf5.2JFZOml5cuk2', 1),
+(2, 'usuario', '$2a$10$FXMwbN1x8qKWTBdxgS1fhejKim4rq1rYtHB8IRoydPi7csL4zi6ge', 0),
+(4, 'hero', '$2y$10$K2c7OJDbjTFsJrj8RSh.6.LuYH4AWE/CGoIXJ3fwljOxUh/826a5O', 0),
+(5, 'panchi', '$2y$10$QqvBEJiMRjqDw49yiasxHOwbrVSe3ZGiua8W/gQ3.JRt1g.fEj6.G', 0);
 
 --
 -- Índices para tablas volcadas
@@ -168,7 +174,7 @@ ALTER TABLE `distribuidor`
 -- AUTO_INCREMENT de la tabla `usuario`
 --
 ALTER TABLE `usuario`
-  MODIFY `id_usuario` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id_usuario` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- Restricciones para tablas volcadas
