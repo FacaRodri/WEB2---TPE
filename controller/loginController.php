@@ -42,7 +42,7 @@ class loginController
         session_start();
         $_SESSION["nombre"] = $nombre;
         $_SESSION['admin'] = $dbUser[0]['admin'];
-        header(tiposDeCerveza);
+        header(TIPOSDECERVEZA);
       } else {
         $this->Loginview->mostrarLogin("Contraseña incorrecta");
       }

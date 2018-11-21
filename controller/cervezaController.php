@@ -4,12 +4,14 @@ require_once "./view/tiposDeCervezaView.php";
 require_once "./model/cervezaModel.php";
 require_once "./model/distribuidorModel.php";
 require_once "./controller/securedController.php";
+require_once "./model/imagenModel.php";
 
 class cervezaController extends securedController
 {
   private $CervezasView;
   private $CervezasModel;
   private $DistribuidorModel;
+  private $ImagenModel;
 
 
   function __construct()
@@ -18,6 +20,8 @@ class cervezaController extends securedController
     $this->CervezasView = new tiposDeCervezaView();
     $this->CervezasModel = new cervezaModel();
     $this->DistribuidorModel = new distribuidorModel();
+    $this->ImagenModel = new imagenModel();
+
   }
 
   function mostrarCerveza()
@@ -51,21 +55,41 @@ class cervezaController extends securedController
       $nombre = $_POST['nombreForm'];
       $precio = $_POST['precioForm'];
       $this->CervezasModel->GuardarEditarCerveza($nombre, $precio, $id_cerveza[0]);
-      header("Location: http://" . $_SERVER["SERVER_NAME"] . dirname($_SERVER["PHP_SELF"]) . "/tiposDeCerveza");
+      header(TIPOSDECERVEZA);
     } else {
       header(HOME);
     }
   }
 
-  function InsertCerveza()
-  {
+  function InsertCerveza(){
     if ($_SESSION['admin'] == 1) {
-
-      $nombre = $_POST["nombre"];
-      $precio = $_POST["precio"];
-      $id_creador = $_POST["id_creador"];
+      if((isset($_POST['nombre'])) && (isset($_POST['precio'])) &&(isset($_POST['id_creador']))){
+        $nombre = $_POST["nombre"];
+        $precio = $_POST["precio"];
+        $id_creador = $_POST["id_creador"];
+        $imagen = $_FILES['imagenes'];
+      }
+      
+          $arrayImagenes = array();
+      if (isset($_FILES['imagenes'])){
+        $cantidad= count($_FILES["imagenes"]["tmp_name"]);
+        for ($i=0; $i<$cantidad; $i++){
+           //Comprobamos si el fichero es una imagen
+          if ($_FILES['imagenes']['type'][$i]=='image/png' || $_FILES['imagenes']['type'][$i]=='image/jpeg'){
+            array_push($arrayImagenes, $this->ImagenModel->subirImagen($_FILES["imagenes"]["tmp_name"][$i]));
+           }
+        }
+      }
       $this->CervezasModel->Insert($nombre, $precio, $id_creador);
-      header("Location: http://" . $_SERVER["SERVER_NAME"] . dirname($_SERVER["PHP_SELF"]) . "/tiposDeCerveza");
+
+      $numeroCerveza = $this->CervezasModel->lastInsertId();
+
+      $cantidad = count($arrayImagenes);
+      for ($i=0; $i < $cantidad ; $i++) {
+        $this->ImagenModel->AgregarImagen($arrayImagenes[$i], $numeroCerveza['id_cerveza']);
+      }
+    
+      header(TIPOSDECERVEZA);
     } else {
       header(HOME);
 
@@ -75,7 +99,7 @@ class cervezaController extends securedController
     function Delete($param){
       if ($_SESSION['admin'] == 1) {
         $this->CervezasModel->Delete($param);
-        header("Location: http://" . $_SERVER["SERVER_NAME"] . dirname($_SERVER["PHP_SELF"]) . "/tiposDeCerveza");
+        header(TIPOSDECERVEZA);
       } else {
         header(HOME);
       }
@@ -88,7 +112,7 @@ class cervezaController extends securedController
         $nombre = $_POST["nombre"];
         $localidad = $_POST["localidad"];
         $this->DistribuidorModel->Insert($nombre, $localidad);
-        header("Location: http://" . $_SERVER["SERVER_NAME"] . dirname($_SERVER["PHP_SELF"]) . "/tiposDeCerveza");
+        header(TIPOSDECERVEZA);
       } else {
         header(HOME);
       }
@@ -97,7 +121,7 @@ class cervezaController extends securedController
     function DeleteDistribuidor($param){
       if ($_SESSION['admin'] == 1) {
         $this->DistribuidorModel->Delete($param);
-        header("Location: http://" . $_SERVER["SERVER_NAME"] . dirname($_SERVER["PHP_SELF"]) . "/tiposDeCerveza");
+        header(TIPOSDECERVEZA);
       } else {
         header(HOME);
       }
@@ -120,11 +144,22 @@ class cervezaController extends securedController
         $nombre = $_POST['nombreFormC'];
         $localidad = $_POST['localidadFormC'];
         $this->DistribuidorModel->GuardarEditarCreador($nombre, $localidad, $id_creador[0]);
-        header("Location: http://" . $_SERVER["SERVER_NAME"] . dirname($_SERVER["PHP_SELF"]) . "/tiposDeCerveza");
+        header(TIPOSDECERVEZA);
       } else {
         header(HOME);
       }
     }
+
+    //imagenes
+
+    function BorrarImagen($id_imagen){
+      if($_SESSION['admin'] == 1){
+        $this->ImagenModel->BorrarImagen($id_imagen);
+        header(TIPOSDECERVEZA);
+      }else{
+        header(HOME);
+      }
+    } 
 
 }
 ?>

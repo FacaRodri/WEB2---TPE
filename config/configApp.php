@@ -2,7 +2,7 @@
   define('HOME', 'Location: http://'.$_SERVER["SERVER_NAME"] . dirname($_SERVER["PHP_SELF"]));
   define('LOGIN', 'Location: http://'.$_SERVER["SERVER_NAME"] . dirname($_SERVER["PHP_SELF"]). '/login');
   define('LOGOUT', 'Location: http://'.$_SERVER["SERVER_NAME"] . dirname($_SERVER["PHP_SELF"]). '/logout');
-  define('tiposDeCerveza', 'Location: http://'.$_SERVER["SERVER_NAME"] . dirname($_SERVER["PHP_SELF"]). '/tiposDeCerveza');
+  define('TIPOSDECERVEZA', 'Location: http://'.$_SERVER["SERVER_NAME"] . dirname($_SERVER["PHP_SELF"]). '/tiposDeCerveza');
 class ConfigApp
 {
     public static $ACTION = 'action';
@@ -29,7 +29,8 @@ class ConfigApp
       'creador' => 'navigationController#creador',
       'detalles' => 'navigationController#detalles',
       'registro' => 'usuarioController#registro',
-      'InsertUsuario' => 'usuarioController#InsertUsuario'
+      'InsertUsuario' => 'usuarioController#InsertUsuario',
+      'BorrarImagen'=> 'cervezaController#BorrarImagen'
       
 
 

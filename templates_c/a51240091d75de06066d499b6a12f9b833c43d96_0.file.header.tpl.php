@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.33, created on 2018-11-19 23:13:18
+/* Smarty version 3.1.33, created on 2018-11-21 23:15:23
   from 'C:\xampp\htdocs\WikiBeerTPE\templates\header.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.33',
-  'unifunc' => 'content_5bf3357e813674_48550077',
+  'unifunc' => 'content_5bf5d8fbd1ca15_88444169',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'a51240091d75de06066d499b6a12f9b833c43d96' => 
     array (
       0 => 'C:\\xampp\\htdocs\\WikiBeerTPE\\templates\\header.tpl',
-      1 => 1542665596,
+      1 => 1542838506,
       2 => 'file',
     ),
   ),
@@ -23,12 +23,12 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:navVisitante.tpl' => 1,
   ),
 ),false)) {
-function content_5bf3357e813674_48550077 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5bf5d8fbd1ca15_88444169 (Smarty_Internal_Template $_smarty_tpl) {
 ?><!DOCTYPE html>
 <html lang="en">
 
 <head>
-    <base href="http://<?php echo $_SERVER['SERVER_NAME'];?>
+    <base href="//<?php echo $_SERVER['SERVER_NAME'];?>
 /WikiBeerTPE/">
     <link rel="stylesheet" href="./css/bootstrap.min.css">
     <link rel="stylesheet" href="./css/style.css">

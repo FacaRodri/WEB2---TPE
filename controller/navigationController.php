@@ -3,17 +3,21 @@
     include_once "./view/navDefaultView.php";
     require_once  "./model/cervezaModel.php";
     require_once  "./model/distribuidorModel.php";
+    require_once "./model/imagenModel.php";
 
     class navigationController{
         private $navDefaultView;
         private $CervezasModel;
         private $DistribuidorModel;
+        private $ImagenModel;
 
 
         function __construct(){
             $this->navDefaultView = new navDefaultView();
             $this->CervezasModel = new cervezaModel();
             $this->DistribuidorModel = new distribuidorModel();
+            $this->ImagenModel = new ImagenModel();
+
         }
 
         function home(){
@@ -45,8 +49,9 @@
         }
 
         function detalles($id_cerveza){
+            $imagenes = $this->ImagenModel->GetImagenCerveza($id_cerveza);
             $fila = $this->CervezasModel->getDetalles($id_cerveza);
-            $this->navDefaultView->mostrarDetalles($fila);
+            $this->navDefaultView->mostrarDetalles($fila, $imagenes);
         }
 
 

@@ -26,20 +26,16 @@
           <td>{$fila['localidad']}</td>
         </tr>
       </table>
+      {include file="imagenCerveza.tpl"}     
       <div class="container">
       <h4 class="editar" >AGREGAR COMENTARIO</h4>
       <form method="post" action="InsertCerveza">
         <div class="form-group">
-          <label class="editar" for="nombre">Cerveza</label>
-          <input type="text" class="form-control" id="nombre" name="nombre">
+          <label class="editar" for="nombre">Comentario</label>
+          <input type="text-area" class="form-control" id="nombre" name="nombre">
         </div>
-        <div class="form-group">
-          <label class="editar" for="precio">Precio</label>
-          <input type="text" class="form-control" id="precio" name="precio">
-        </div>
-         <div class="form-group">
-          <label class="editar" for="tituloForm">Distribuidor</label>
-    </div>
+       
+         
           </div>
       
           {include file="footer.tpl"}

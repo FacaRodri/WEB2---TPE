@@ -13,6 +13,9 @@
             <td>
               Borrar
             </td>
+            <td>
+              Detalles
+            </td>
           </thead>
       <ul class="list-group">
 
@@ -23,12 +26,16 @@
         <td>{$cerveza['nombre']}</td>
         <td>{$cerveza['precio']}</td>
         <td> <a href="editarCerveza/{$cerveza['id_cerveza']}">EDITAR</a> </td>
-        <td> <a href="Delete/{$cerveza['id_cerveza']}">BORRAR</a> </td></tr>
+        <td> <a href="Delete/{$cerveza['id_cerveza']}">BORRAR</a> </td>
+        <td><a href="detalles/{$cerveza['id_cerveza']}">MOSTRAR</a></td>
+        </tr>
+
       {/foreach}
-     
+   
+
     <div class="container">
       <h4 class="editar" >AGREGAR CERVEZA</h4>
-      <form method="post" action="InsertCerveza">
+      <form method="post" action="InsertCerveza" enctype="multipart/form-data">
         <div class="form-group">
           <label class="editar" for="nombre">Cerveza</label>
           <input type="text" class="form-control" id="nombre" name="nombre">
@@ -44,8 +51,15 @@
                           <option value="{$creadores['id_creador']}" > {$creadores['nombre']} </option>
                     {/foreach}  
             </select>
+            <div class="form-group">
+                  <h4>INSERTAR IMAGEN</h4>
+
+          <label for="imagen">Imagen</label>
+          <input type="file" id="imagenes" name="imagenes[]" multiple>
         </div>
         <button type="submit" class="btn btn-primary">Agregar</button>
+        </div>
+          <div class="container">
       </form>
       </table>
     </div>

@@ -38,9 +38,11 @@ class navDefaultView {
         $this->smarty->display('templates/tiposDeCervezaVisitante.tpl');
     }
 
-    function mostrarDetalles($fila){
+    function mostrarDetalles($fila, $imagenes){
         $this->smarty->assign('fila', $fila);
+        $this->smarty->assign('imagenes', $imagenes);
         $this->smarty->display('templates/detalles.tpl');
+    
     }
 
     function mostrarCreador($tabla){

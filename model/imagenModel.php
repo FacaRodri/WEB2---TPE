@@ -1,5 +1,5 @@
 <?php
-class ImagenesModel
+class imagenModel
 {
   private $db;
   function __construct()
@@ -11,9 +11,9 @@ class ImagenesModel
     .'dbname=wikibeer;charset=utf8'
     , 'root', '');
   }
-  function GetImagenCerveza($id_imagen){
-      $sentencia = $this->db->prepare( "SELECT * FROM imagen WHERE id_cerveza=?");
-      $sentencia->execute(array($id_imagen));
+  function GetImagenCerveza($id_cerveza){
+      $sentencia = $this->db->prepare( "SELECT * FROM imagen WHERE id_cerveza = ?");
+      $sentencia->execute(array($id_cerveza[0]));
       return $sentencia->fetchAll(PDO::FETCH_ASSOC);
   }
   function GetImagenes(){
@@ -21,16 +21,15 @@ class ImagenesModel
       $sentencia->execute();
       return $sentencia->fetchAll(PDO::FETCH_ASSOC);
   }
-  function AgregarImagen($tempPath,$id_cerveza){
-    $path = $this->subirImagen($tempPath);
+  function AgregarImagen($path,$id_cerveza){
     $sentencia = $this->db->prepare("INSERT INTO imagen(source,id_cerveza) VALUES(?,?)");
     $sentencia->execute(array($path,$id_cerveza));
   }
-  function BorrarImagen($id){
-    $sentencia = $this->db->prepare( "DELETE FROM imagen WHERE id_imagen=?");
-    $sentencia->execute(array($id));
+  function BorrarImagen($id_imagen){
+    $sentencia = $this->db->prepare( "DELETE FROM imagen WHERE id_imagen = ?");
+    $sentencia->execute(array($id_imagen[0]));
   }
-  private function subirImagen($imagen){
+    function subirImagen($imagen){
       $destino_final = 'images/' . uniqid() . '.jpg';
       move_uploaded_file($imagen, $destino_final);
       return $destino_final;

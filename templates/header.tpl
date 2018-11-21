@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-    <base href="http://{$smarty.server.SERVER_NAME}/WikiBeerTPE/">
+    <base href="//{$smarty.server.SERVER_NAME}/WikiBeerTPE/">
     <link rel="stylesheet" href="./css/bootstrap.min.css">
     <link rel="stylesheet" href="./css/style.css">
     <meta charset="UTF-8">

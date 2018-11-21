@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.33, created on 2018-10-19 00:10:31
+/* Smarty version 3.1.33, created on 2018-11-21 23:25:39
   from 'C:\xampp\htdocs\WikiBeerTPE\templates\cerveza.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.33',
-  'unifunc' => 'content_5bc904d77aa003_27267184',
+  'unifunc' => 'content_5bf5db63215036_48967104',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '80d590eabdce7ed8a60fc466f6192b5540f62d40' => 
     array (
       0 => 'C:\\xampp\\htdocs\\WikiBeerTPE\\templates\\cerveza.tpl',
-      1 => 1539900630,
+      1 => 1542839124,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_5bc904d77aa003_27267184 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5bf5db63215036_48967104 (Smarty_Internal_Template $_smarty_tpl) {
 ?><div class="container">
 <table class="tablaTipos" aling="center">
     <thead>
@@ -35,6 +35,9 @@ function content_5bc904d77aa003_27267184 (Smarty_Internal_Template $_smarty_tpl)
             </td>
             <td>
               Borrar
+            </td>
+            <td>
+              Detalles
             </td>
           </thead>
       <ul class="list-group">
@@ -54,15 +57,20 @@ foreach ($_from as $_smarty_tpl->tpl_vars['cerveza']->value) {
         <td> <a href="editarCerveza/<?php echo $_smarty_tpl->tpl_vars['cerveza']->value['id_cerveza'];?>
 ">EDITAR</a> </td>
         <td> <a href="Delete/<?php echo $_smarty_tpl->tpl_vars['cerveza']->value['id_cerveza'];?>
-">BORRAR</a> </td></tr>
+">BORRAR</a> </td>
+        <td><a href="detalles/<?php echo $_smarty_tpl->tpl_vars['cerveza']->value['id_cerveza'];?>
+">MOSTRAR</a></td>
+        </tr>
+
       <?php
 }
 }
 $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
-     
+   
+
     <div class="container">
       <h4 class="editar" >AGREGAR CERVEZA</h4>
-      <form method="post" action="InsertCerveza">
+      <form method="post" action="InsertCerveza" enctype="multipart/form-data">
         <div class="form-group">
           <label class="editar" for="nombre">Cerveza</label>
           <input type="text" class="form-control" id="nombre" name="nombre">
@@ -87,8 +95,15 @@ foreach ($_from as $_smarty_tpl->tpl_vars['creadores']->value) {
 }
 $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>  
             </select>
+            <div class="form-group">
+                  <h4>INSERTAR IMAGEN</h4>
+
+          <label for="imagen">Imagen</label>
+          <input type="file" id="imagenes" name="imagenes[]" multiple>
         </div>
         <button type="submit" class="btn btn-primary">Agregar</button>
+        </div>
+          <div class="container">
       </form>
       </table>
     </div><?php }

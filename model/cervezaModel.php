@@ -60,7 +60,11 @@ class cervezaModel
     $setencia->execute($id_cerveza);
     return $setencia->fetch(PDO::FETCH_ASSOC);
   }
-
+  function lastInsertId(){
+    $sentencia = $this->db->prepare("SELECT id_cerveza FROM cerveza ORDER BY id_cerveza  DESC LIMIT 1");
+    $sentencia->execute();
+    return $sentencia->fetch(PDO::FETCH_ASSOC);
+  }
   
 } 
 
