@@ -33,8 +33,8 @@ class distribuidorModel
   }
 
   function Delete($id_creador){
-    $sentencia = $this->db->prepare( "delete from distribuidor where id_creador=?");
-    $sentencia->execute(array($id_creador));
+    $sentencia = $this->db->prepare( "DELETE from distribuidor where id_creador=?");
+    $sentencia->execute(array($id_creador[0]));
   }
 
   function GuardarEditarCreador($nombre,$localidad,$id_creador){

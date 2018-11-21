@@ -16,13 +16,13 @@ class cervezaModel
   }
 
   function GetAll(){
-      $sentencia = $this->db->prepare( "select * from cerveza");
+      $sentencia = $this->db->prepare( "SELECT * from cerveza");
       $sentencia->execute();
       return $sentencia->fetchAll(PDO::FETCH_ASSOC);
   }
 
   function Get($id_cerveza){
-      $sentencia = $this->db->prepare( "select * from cerveza where id_cerveza = ?");
+      $sentencia = $this->db->prepare( "SELECT * from cerveza where id_cerveza = ?");
       $sentencia->execute(array($id_cerveza));
       return $sentencia->fetch(PDO::FETCH_ASSOC);
   }
@@ -33,13 +33,13 @@ class cervezaModel
   }
   
   function Delete($id_cerveza){
-    $sentencia = $this->db->prepare( "delete from cerveza where id_cerveza=?");
-    $sentencia->execute(array($id_cerveza));
+    $sentencia = $this->db->prepare("DELETE from cerveza where id_cerveza=?");
+    $sentencia->execute(array($id_cerveza[0]));
   }
 
-  function GuardarEditarCerveza($nombre,$precio,$nombreCreador,$id_cerveza,$id_creador){
-    $sentencia = $this->db->prepare("UPDATE cerveza c, distribuidor d set c.nombre = ?, c.precio = ?, d.nombre = ? where c.id_cerveza = d.id_creador and c.id_cerveza = ?");
-    $sentencia->execute(array($nombre,$precio,$nombreCreador,$id_cerveza,$id_creador));
+  function GuardarEditarCerveza($nombre,$precio,$id_cerveza){
+    $sentencia = $this->db->prepare("UPDATE cerveza set nombre = ?, precio = ? where id_cerveza = ?");
+    $sentencia->execute(array($nombre,$precio,$id_cerveza));
   }
 
   function GetAllTable(){
@@ -56,7 +56,7 @@ class cervezaModel
   }
 
   function getDetalles($id_cerveza){
-    $setencia = $this->db->prepare("SELECT c.nombre,c.precio,d.id_creador,d.nombre as creador,d.localidad FROM cerveza c, distribuidor d WHERE c.id_creador = d.id_creador AND d.id_creador = ?");
+    $setencia = $this->db->prepare("SELECT c.id_cerveza, c.nombre,c.precio,d.id_creador,d.nombre as creador,d.localidad FROM cerveza c, distribuidor d WHERE c.id_creador = d.id_creador AND c.id_cerveza = ?");
     $setencia->execute($id_cerveza);
     return $setencia->fetch(PDO::FETCH_ASSOC);
   }

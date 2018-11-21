@@ -46,13 +46,11 @@ class cervezaController extends securedController
     }
   }
 
-  function GuardarEditarCerveza($id_cerveza, $id_creador)
-  {
+  function GuardarEditarCerveza($id_cerveza){
     if ($_SESSION['admin'] == 1) {
       $nombre = $_POST['nombreForm'];
       $precio = $_POST['precioForm'];
-      $nombreCreador = $_POST['nombre'];
-      $this->CervezasModel->GuardarEditarCerveza($nombre, $precio, $nombreCreador, $id_cerveza[0], $id_creador[0]);
+      $this->CervezasModel->GuardarEditarCerveza($nombre, $precio, $id_cerveza[0]);
       header("Location: http://" . $_SERVER["SERVER_NAME"] . dirname($_SERVER["PHP_SELF"]) . "/tiposDeCerveza");
     } else {
       header(HOME);
@@ -72,11 +70,11 @@ class cervezaController extends securedController
       header(HOME);
 
     }
+  }
 
-    function Delete($param)
-    {
+    function Delete($param){
       if ($_SESSION['admin'] == 1) {
-        $this->CervezasModel->Delete($param[0]);
+        $this->CervezasModel->Delete($param);
         header("Location: http://" . $_SERVER["SERVER_NAME"] . dirname($_SERVER["PHP_SELF"]) . "/tiposDeCerveza");
       } else {
         header(HOME);
@@ -85,8 +83,7 @@ class cervezaController extends securedController
 
   //distribuidor
 
-    function InsertDistribuidor()
-    {
+    function InsertDistribuidor(){
       if ($_SESSION['admin'] == 1) {
         $nombre = $_POST["nombre"];
         $localidad = $_POST["localidad"];
@@ -97,10 +94,9 @@ class cervezaController extends securedController
       }
     }
 
-    function DeleteDistribuidor($param)
-    {
+    function DeleteDistribuidor($param){
       if ($_SESSION['admin'] == 1) {
-        $this->DistribuidorModel->Delete($param[0]);
+        $this->DistribuidorModel->Delete($param);
         header("Location: http://" . $_SERVER["SERVER_NAME"] . dirname($_SERVER["PHP_SELF"]) . "/tiposDeCerveza");
       } else {
         header(HOME);
@@ -130,7 +126,5 @@ class cervezaController extends securedController
       }
     }
 
-
-  }
 }
 ?>
