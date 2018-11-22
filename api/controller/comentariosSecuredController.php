@@ -14,8 +14,7 @@ class comentariosSecuredController extends apiSecuredController{
   }
     function InsertarComentario(){
           $comentarioJSON = $this->getJSONData();
-          $response = $this->ComentariosModel->insert($comentarioJSON->comentario, $comentarioJSON->puntaje,
-          $comentarioJSON->id_usuario, $comentarioJSON->id_cerveza);
+          $response = $this->ComentariosModel->insert($comentarioJSON->puntaje, $comentarioJSON->comentario, $comentarioJSON->id_cerveza, $comentarioJSON->id_usuario);
           return $this->json_response($response, 200);
     }
     function BorrarComentario($param = null){

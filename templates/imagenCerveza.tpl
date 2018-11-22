@@ -5,7 +5,7 @@
         <figure class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
           <img width="90%" height="200px" src="{$imagen['source']}" alt="Image">
           <figcaption>
-          <a class="btn btn-danger link" href="BorrarImagen/{$imagen['id_imagen']}">Delete</a>
+          <a class="btn btn-primary " href="BorrarImagen/{$imagen['id_imagen']}">BORRAR</a>
          </figcaption>
         </figure>
       {/foreach}

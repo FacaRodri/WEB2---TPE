@@ -102,4 +102,9 @@ caption{
     color: white;
     text-align: center;   
 }
+.cometarioColor{
+    border: 2px solid black;
+    background-color: #2B363F;
+    color: white;
+}
 
