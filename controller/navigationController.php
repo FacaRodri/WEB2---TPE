@@ -40,7 +40,6 @@
         function mostrarCervezaVisitante(){
             $tabla = $this->CervezasModel->GetAllTable();
             $this->navDefaultView->mostrarVisitante($tabla);
-            
           }
 
         function creador($id_creador){

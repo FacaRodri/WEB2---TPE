@@ -26,7 +26,7 @@
             <td>${$fila['precio']}</td>
             <td><a href="creador/{$fila['id_creador']}">{$fila['creador']}</a></td>
             <td>{$fila['localidad']}</td>
-            <td><a href="detalles/{$fila['id_creador']}">Mostrar</a></td>
+            <td><a href="detalles/{$fila['id_cerveza']}">Mostrar</a></td>
           </tr>
       {/foreach}
       </table>
