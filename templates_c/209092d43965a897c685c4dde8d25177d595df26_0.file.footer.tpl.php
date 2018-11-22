@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.33, created on 2018-10-09 20:42:49
+/* Smarty version 3.1.33, created on 2018-11-22 15:02:56
   from 'C:\xampp\htdocs\WikiBeerTPE\templates\footer.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.33',
-  'unifunc' => 'content_5bbcf6a94335a6_13772933',
+  'unifunc' => 'content_5bf6b7105f9519_95544965',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '209092d43965a897c685c4dde8d25177d595df26' => 
     array (
       0 => 'C:\\xampp\\htdocs\\WikiBeerTPE\\templates\\footer.tpl',
-      1 => 1539108468,
+      1 => 1542895207,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_5bbcf6a94335a6_13772933 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5bf6b7105f9519_95544965 (Smarty_Internal_Template $_smarty_tpl) {
 ?><footer class="footer">
         <div class="container-fluid">
             <span class="text-muted">
@@ -38,6 +38,9 @@ function content_5bbcf6a94335a6_13772933 (Smarty_Internal_Template $_smarty_tpl)
 >
     <?php echo '<script'; ?>
  src="js/bootstrap.min.js"><?php echo '</script'; ?>
+>
+     <?php echo '<script'; ?>
+ src="js/handlebars.js"><?php echo '</script'; ?>
 >
     <?php echo '<script'; ?>
  src="js/main.js" charset="utf-8"><?php echo '</script'; ?>

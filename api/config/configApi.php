@@ -1,13 +1,12 @@
 <?php
-class ConfigApi
+class configApi
 {
     public static $RESOURCE = 'resource';
     public static $PARAMS = 'params';
     public static $RESOURCES = [
-      'detalles#GET'=> 'ComentariosApiController#MostrarComentarios',
-      'detalles#DELETE'=> 'ComentariosApiController#BorrarComentarios',
-      'detalles#POST'=> 'ComentariosApiController#InsertarComentario'
-      
+      'detalles#GET'=> 'comentariosController#mostrarComentario',
+      'detalles#DELETE'=> 'comentariosSecuredController#BorrarComentario',
+      'detalles#POST'=> 'comentariosSecuredController#insertarComentario'
     ];
 }
  ?>

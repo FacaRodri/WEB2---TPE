@@ -1,7 +1,7 @@
 <?php
 require_once "api.php";
 require_once "../model/comentariosModel.php";
-class ComentariosApiController extends Api
+class comentariosController extends api
 {
   //ATRIBUTOS
   private $comentariosModel;
@@ -11,7 +11,7 @@ class ComentariosApiController extends Api
     $this->comentariosModel = new comentariosModel();
   }
 //TRAE COMENTARIOS
-  function mostrarComentarios($id_cerveza = null){
+  function mostrarComentario($id_cerveza = null){
     if(isset($id_cerveza)){
       $comentario = $this->comentariosModel->getByCerveza($id_cerveza);
     }else{
@@ -22,15 +22,6 @@ class ComentariosApiController extends Api
     }else {
       return $this->json_response(null, 404);
     }
-  }
-//ESTA FUNCION VA EN LA API SecuredComentariosApiController
-
-  function insertarComentario(){
-      //FALTA CAMBIAR EL MODELO PARA QUE DEVUELVA UN BOOLEAN
-      $comentarioJSON = $this->getJSONData();
-      $response = $this->comentariosModel->insert($comentarioJSON->comentario, $comentarioJSON->puntaje,
-      $comentarioJSON->id_usuario, $comentarioJSON->id_cerveza);
-      return $this->json_response($response, 200);
   }
 }
  ?>

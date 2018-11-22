@@ -25,6 +25,8 @@
       {include file="imagenCerveza.tpl"}     
       <div class="container">
         <h4 class="editar" >AGREGAR COMENTARIO</h4>
+        <div class="comentarios">
+        </div>
         <form method="post" action="InsertCerveza">
       </div>  
       <div class="form-group">

@@ -1,201 +1,102 @@
-"use strict"
-let urlTipos = "tiposDeCerveza.html"
-let urlHome = "home.html"
-let urlInfoCurso = "informacionCurso.html"
-let urlForm = "inscripcionCurso.html"
-let urlContacto = "contacto.html"
-let urlInscriptos = "inscriptos.html"
+'use strict';
 
-traerHome();
-document.querySelector(".tipos").addEventListener("click", traerTiposdecerveza);
-document.querySelector(".home").addEventListener("click", traerHome);
-document.querySelector(".homeLogo").addEventListener("click", traerHome);
-document.querySelector(".infoCurso").addEventListener("click", traerInfoCurso);
-document.querySelector(".inscripcion").addEventListener("click", traerForm);
-document.querySelector(".contacto").addEventListener("click", traerContacto);
+let urlAPI = "api/detalles";
+let templateComentarios;
 
 
-function traerHome() {
-  fetch(urlHome).then(
-    function (r) {
-      r.text().then(function (r) {
-        document.querySelector(".partialContenedor").innerHTML = r;
-      })
-    })
-    .catch(function (response) {
-      document.querySelector(".partialContenedor").innerHTML = "<h1>SIN CONEXION</h1>"
-    });
+document.addEventListener('DOMContentLoaded', loadComments);
+
+function loadComments(){
+  //DESCARGAR Y COMPILAR EL TEMPLATE (SE DESCARGA UNA VEZ AL PRINCIPIO)
+  fetch('js/templates/comentarios.handlebars')
+    .then(response => response.text())
+    .then(template => {
+      templateComentarios = Handlebars.compile(template); // compila y prepara el template
+
+      getComentarios();
+
+      document.querySelector("#comment").addEventListener('click', agregarComentario);
+      let timer = setInterval(getComentarios, 2000);
+  });
 }
-function traerTiposdecerveza() {
-
-  fetch(urlTipos).then(
-    function (r) {
-      r.text().then(function (r) {
-        document.querySelector(".partialContenedor").innerHTML = r;
-      })
+function getComentarios() {
+    var url = window.location.pathname;
+    var id_cerveza= url.substring(url.lastIndexOf('/') + 1);
+    console.log(id_cerveza);
+    fetch(urlAPI + '/' + id_cerveza)
+    .then(r => r.json())
+    .then(jsonComentarios => {
+        mostrarComentarios(jsonComentarios);
+        console.log(jsonComentarios);
     })
-    .catch(function (response) {
-      document.querySelector(".partialContenedor").innerHTML = "<h1>NO Cargando...</h1>"
-    });
-}
-function traerInfoCurso() {
-  fetch(urlInfoCurso).then(
-    function (r) {
-      r.text().then(function (r) {
-        document.querySelector(".partialContenedor").innerHTML = r;
-      })
-    })
-    .catch(function (response) {
-      document.querySelector(".partialContenedor").innerHTML = "<h1>SIN CONEXION</h1>"
-    });
-}
-function traerForm() {
-  fetch(urlForm).then(
-    function (r) {
-      r.text().then(function (r) {
-        document.querySelector(".partialContenedor").innerHTML = r;
-        document.querySelector(".enviarDatos").addEventListener('click', enviar);
-        document.querySelector(".enviarDatos3veces").addEventListener('click', enviar3veces);
-        document.querySelector(".filtrarPorCiudad").addEventListener('click', filtrarPorCiudad);
-        traerTabla();
+  }
+function mostrarComentarios(jsonComentarios) {
 
-      })
-    })
-    .catch(function (response) {
-      document.querySelector(".partialContenedor").innerHTML = "<h1>SIN CONEXION</h1>"
-    });
-
-}
-function traerContacto() {
-  fetch(urlContacto).then(
-    function (r) {
-      r.text().then(function (r) {
-        document.querySelector(".partialContenedor").innerHTML = r;
-      })
-    })
-    .catch(function (response) {
-      document.querySelector(".partialContenedor").innerHTML = "<h1>SIN CONEXION</h1>"
-    });
-}
-
-let baseURL = 'https://web-unicen.herokuapp.com/api/groups/';
-let url = baseURL + "grupo48/curso/";
-
-function traerTabla() {
-  fetch(url).then(info => info.json())
-    .then(t => cargar(t.curso))
-    .catch()
-  function cargar(x) {
-    let tt = "";
-    for (let i = 0; i < x.length; i++) {
-      tt = tt + "<tr><td>" + x[i].thing.nombre + "</td><td>" + x[i].thing.apellido + "</td><td>" + x[i].thing.ciudad + "</td><td><button id='" + x[i]._id + "' class='btnborrar'>Borrar</button></td><td><button id='" + x[i]._id + "' class='btneditar'>Editar</button></td></tr>";
+  //INSTANCIAR TEMPLATE CON UN CONTEXTO
+    let context = { // como el assign de smarty
+        comentarios: jsonComentarios,
     }
-    let tabla = document.querySelector('.js-tablainscriptos').innerHTML = tt;
-    let btndelete = document.querySelectorAll('.btnborrar');
-    let btnedit = document.querySelectorAll('.btneditar');
-    btndelete.forEach(b => {
-      b.addEventListener('click', e => BorrarElemento(b.id));
-    });
-    btnedit.forEach(b => {
-      b.addEventListener('click', e => EditarElemento(b.id));
+
+    let html = templateComentarios(context);
+    document.querySelector(".comentarios").innerHTML = html;
+
+    let b = document.querySelectorAll(".borrar");
+    let administador = document.querySelector(".admin").getAttribute("data");
+    if (administador === "admin") {
+      b.forEach(b=> {b.addEventListener("click",function(){borrarComentario(b.getAttribute("data"))});
+      b.removeAttribute("hidden");
+
     });
   }
 }
-function enviar3veces() {
-  enviar();
-  enviar();
-  enviar();
-}
-function filtrarPorCiudad() {
-  let filtro = document.querySelector(".inputfiltrarPorCiudad").value;
-  fetch(url).then(info => info.json())
-    .then(t => cargar(t.curso))
-    .catch()
-  function cargar(x) {
-    let tt = "";
-    for (let i = 0; i < x.length; i++) {
-      if (x[i].thing.ciudad.toLowerCase() == filtro.toLowerCase()) {
-        tt = tt + "<tr ><td>" + x[i].thing.nombre + "</td><td>" + x[i].thing.apellido + "</td><td>" + x[i].thing.ciudad + "</td><td><button id='" + x[i]._id + "' class='btnborrar'>Borrar</button></td><td><button id='" + x[i]._id + "' class='btneditar'>Editar</button></td></tr>";
-      }
 
+function agregarComentario(){
+  //Aca deberiamos agarrar los input de mensaje puntaje id recital y id usuario
+  //para pasarlos al objeto
+  let puntaje = document.querySelector("#puntaje").value;
+  let comentario = document.querySelector("#comentario").value;
+  let cerveza = document.querySelector("#id_cerveza").value;
+  let usuario = document.querySelector("id_usuario").getAttribute("data");
 
+  console.log(recital);
+  //Creamos el objeto comentario para enviar, con los atributos de la DB
+  let comentario = {
+    "puntaje": puntaje,
+    "comentario": comentario,
+    "id_cerveza": cerveza,
+    "id_usuario": usuario
+    
+  }
+
+  //ID USUARIO Y ID RECITAL HARDCODEADO, ESTO SE TIENE QUE CAMBIAR
+
+  fetch(urlAPI, {
+    'method': 'POST',
+    'headers': {'content-type': 'application/json'},
+    'body': JSON.stringify(comentario)
+  })
+  .then(r => {
+    if(r.ok){
+      r.json().then(t => {
+        console.log("Se cargo con éxito");
+        getComentarios();
+        //Se deberian vaciar los puntajes y texto
+        //Acá se deberia volver a llamar a la función de cargar comentarios, todavia no
+      })
     }
-    let tabla = document.querySelector('.js-tablainscriptos').innerHTML = tt;
-    let btndelete = document.querySelectorAll('.btnborrar');
-    let btnedit = document.querySelectorAll('.btneditar');
-    btndelete.forEach(b => {
-      b.addEventListener('click', e => BorrarElemento(b.id));
-    });
-    btnedit.forEach(b => {
-      b.addEventListener('click', e => EditarElemento(b.id));
-    });
-  }
+  })
+  let comentario = document.querySelector("#comentario");
+  comentario.value = '';
+  comentario.innerHTML = '';
 }
 
-function enviar() {
-  let apellido = document.querySelector(".apellido").value;
-  let nombre = document.querySelector(".nombre").value;
-  let ciudad = document.querySelector(".ciudad").value;
 
-  let provincia = document.querySelector(".provincia").value;
-  let pais = document.querySelector(".pais").value;
-  let codigoPostal = document.querySelector(".codigoPostal").value;
-
-  let inscripcion = {
-    "nombre": nombre,
-    "apellido": apellido,
-    "ciudad": ciudad,
-    "provincia": provincia,
-    "pais": pais,
-    "codigo postal": codigoPostal,
+  function borrarComentario(id_comentario){
+    console.log("borrar");
+    console.log(id_comentario);
+    fetch(urlAPI + '/' + id_comentario,  {
+    'method': 'DELETE',
+    'headers': {'Content-Type': 'application/json'},
+    })
+    .then(r => loadComments())
   }
-
-  let objeto = {
-    "thing": inscripcion
-  }
-  fetch(url, {
-    method: 'POST',
-    headers: {
-      'Content-Type': 'application/json'
-    },
-    body: JSON.stringify(objeto)
-  }).then(response =>
-    traerTabla()
-  );
-}
-
-function EditarElemento(id) {
-  let apellido = document.querySelector(".apellido").value;
-  let nombre = document.querySelector(".nombre").value;
-  let ciudad = document.querySelector(".ciudad").value;
-  let provincia = document.querySelector(".provincia").value;
-  let pais = document.querySelector(".pais").value;
-  let codigoPostal = document.querySelector(".codigoPostal").value;
-  let inscripcion = {
-    "nombre": nombre,
-    "apellido": apellido,
-    "ciudad": ciudad,
-    "provincia": provincia,
-    "pais": pais,
-    "codigo postal": codigoPostal,
-  }
-  let objeto = {
-    "thing": inscripcion
-  }
-  fetch(url + id, {
-    method: 'PUT', "headers": { "Content-Type": "application/json" },
-    "body": JSON.stringify(objeto)
-  }).then(response =>
-    traerTabla()
-  );
-
-}
-
-function BorrarElemento(id) {
-  fetch(url + id, {
-    method: 'delete'
-  }).then(response =>
-    traerTabla()
-  );
-
-}

@@ -43,7 +43,7 @@ class cervezaModel
   }
 
   function GetAllTable(){
-    $sentencia = $this->db->prepare("SELECT c.nombre,c.precio,d.id_creador,d.nombre as creador,d.localidad FROM cerveza c, distribuidor d WHERE c.id_creador = d.id_creador ORDER BY c.id_creador" );    
+    $sentencia = $this->db->prepare("SELECT c.nombre,c.precio,d.id_creador,d.nombre as creador,d.localidad FROM cerveza c, distribuidor d WHERE c.id_creador = d.id_creador ORDER BY c.id_cerveza" );    
     $sentencia->execute();
     return $sentencia->fetchAll(PDO::FETCH_ASSOC);
   }
@@ -56,7 +56,7 @@ class cervezaModel
   }
 
   function getDetalles($id_cerveza){
-    $setencia = $this->db->prepare("SELECT c.id_cerveza, c.nombre, c.precio, d.id_creador, d.nombre as creador, d.localidad FROM cerveza c, distribuidor d WHERE c.id_creador = d.id_cerveza AND c.id_cerveza = ?");
+    $setencia = $this->db->prepare("SELECT c.id_cerveza, c.nombre, c.precio, d.id_creador, d.nombre as creador, d.localidad FROM cerveza c, distribuidor d WHERE c.id_cerveza = d.id_cerveza AND c.id_cerveza = ?");
     $setencia->execute($id_cerveza);
     return $setencia->fetch(PDO::FETCH_ASSOC);
   }

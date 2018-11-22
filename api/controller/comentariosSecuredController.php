@@ -12,14 +12,12 @@ class comentariosSecuredController extends apiSecuredController{
     $this->ComentariosModel = new comentariosModel();
     $this->UsuariosModel = new usuarioModel();
   }
-  //ESTA FUNCION VA EN LA API SecuredComentariosApiController
     function InsertarComentario(){
           $comentarioJSON = $this->getJSONData();
           $response = $this->ComentariosModel->insert($comentarioJSON->comentario, $comentarioJSON->puntaje,
           $comentarioJSON->id_usuario, $comentarioJSON->id_cerveza);
           return $this->json_response($response, 200);
     }
-    //ESTA FUNCION VA EN LA API SecuredComentariosApiController
     function BorrarComentario($param = null){
        if (count($param) == 1) {
          $id_comentario = $param[0];

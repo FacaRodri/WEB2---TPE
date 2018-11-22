@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.33, created on 2018-11-22 03:14:12
+/* Smarty version 3.1.33, created on 2018-11-22 16:42:26
   from 'C:\xampp\htdocs\WikiBeerTPE\templates\cervezaVisitante.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.33',
-  'unifunc' => 'content_5bf610f439fa13_86599825',
+  'unifunc' => 'content_5bf6ce621abc36_91654583',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'a0007fd794721546dec8408ce4d016e3bd1802f2' => 
     array (
       0 => 'C:\\xampp\\htdocs\\WikiBeerTPE\\templates\\cervezaVisitante.tpl',
-      1 => 1542852849,
+      1 => 1542901344,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_5bf610f439fa13_86599825 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5bf6ce621abc36_91654583 (Smarty_Internal_Template $_smarty_tpl) {
 ?><div class="container-fluid">
 <table class="tablaTipos" aling="center">
     <thead>
