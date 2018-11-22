@@ -1,6 +1,6 @@
 {include file="header.tpl"}
 <div class="container-fluid">
-<table class="tablaTipos" aling="center">
+  <table class="tablaTipos" aling="center">
     <thead>
             <td>
               Nombre
@@ -15,27 +15,22 @@
               Localidad
             </td>
           </thead>
-      <ul class="list-group">
-
-      </ul>
-    </div>
         <tr>
           <td>{$fila['nombre']}</td>
           <td>{$fila['precio']}</td>
           <td>{$fila['creador']}</td>
           <td>{$fila['localidad']}</td>
         </tr>
-      </table>
+  </table>
       {include file="imagenCerveza.tpl"}     
       <div class="container">
-      <h4 class="editar" >AGREGAR COMENTARIO</h4>
-      <form method="post" action="InsertCerveza">
-        <div class="form-group">
+        <h4 class="editar" >AGREGAR COMENTARIO</h4>
+        <form method="post" action="InsertCerveza">
+      </div>  
+      <div class="form-group">
           <label class="editar" for="nombre">Comentario</label>
           <input type="text-area" class="form-control" id="nombre" name="nombre">
-        </div>
-       
-         
-          </div>
+      </div>         
+</div>
       
           {include file="footer.tpl"}

@@ -2,7 +2,6 @@
 
 require_once "./view/usuarioView.php";
 require_once "./model/usuarioModel.php";
-require_once "./controller/securedController.php";
 
 class usuarioController 
 {
@@ -22,8 +21,7 @@ class usuarioController
     $this->Userview->Mostrar($this->$Usuarios);
   }
 
-  function InsertUsuario()
-  {
+  function InsertUsuario(){
     $nombre = $_POST["nombre"];
     $clave = $_POST["clave"];
     $hash = password_hash($clave, PASSWORD_DEFAULT);
@@ -32,7 +30,6 @@ class usuarioController
     $_SESSION['nombre'] = $nombre;
     $_SESSION['admin'] = 0;
     header(HOME);
-    header("Location: http://" . $_SERVER["SERVER_NAME"] . dirname($_SERVER["PHP_SELF"]));
   }
   function registro(){
     $this->Userview->registro();

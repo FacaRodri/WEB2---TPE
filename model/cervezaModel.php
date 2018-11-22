@@ -56,7 +56,7 @@ class cervezaModel
   }
 
   function getDetalles($id_cerveza){
-    $setencia = $this->db->prepare("SELECT c.id_cerveza, c.nombre,c.precio,d.id_creador,d.nombre as creador,d.localidad FROM cerveza c, distribuidor d WHERE c.id_creador = d.id_creador AND c.id_cerveza = ?");
+    $setencia = $this->db->prepare("SELECT c.id_cerveza, c.nombre, c.precio, d.id_creador, d.nombre as creador, d.localidad FROM cerveza c, distribuidor d WHERE c.id_creador = d.id_cerveza AND c.id_cerveza = ?");
     $setencia->execute($id_cerveza);
     return $setencia->fetch(PDO::FETCH_ASSOC);
   }

@@ -24,6 +24,7 @@ class ComentariosApiController extends Api
     }
   }
 //ESTA FUNCION VA EN LA API SecuredComentariosApiController
+
   function insertarComentario(){
       //FALTA CAMBIAR EL MODELO PARA QUE DEVUELVA UN BOOLEAN
       $comentarioJSON = $this->getJSONData();

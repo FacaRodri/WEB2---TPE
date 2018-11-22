@@ -15,9 +15,9 @@ class comentariosModel
 //Insertar un comentario
   function insert($comentario, $puntaje, $id_usuario, $id_cerveza){
     $sentencia = $this->db->prepare("INSERT INTO comentario(comentario, puntaje, id_usuario, id_cerveza) VALUES(?,?,?,?)");
-    $sentencia->execute(array($comentaripo, $puntaje, $id_usuario, $id_cerveza));
+    $sentencia->execute(array($comentario, $puntaje, $id_usuario, $id_cerveza));
   }
-//Obtener un comentario medinate el id de un recital
+//Obtener un comentario medinate el id 
   function getByCerveza($id_cerveza){
     $sentencia = $this->db->prepare("SELECT * FROM comentario WHERE id_cerveza = ?");
     $sentencia->execute($id_cerveza);
