@@ -100,11 +100,16 @@ caption{
 }
 .editarLabel{
     color: white;
-    text-align: center;   
+    text-align: center; 
+  
 }
 .cometarioColor{
     border: 2px solid black;
     background-color: #2B363F;
     color: white;
 }
+.center{
+    margin:auto;
+}
+
 

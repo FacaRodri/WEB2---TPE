@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.33, created on 2018-11-21 23:25:39
+/* Smarty version 3.1.33, created on 2018-11-23 02:27:06
   from 'C:\xampp\htdocs\WikiBeerTPE\templates\cerveza.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.33',
-  'unifunc' => 'content_5bf5db63215036_48967104',
+  'unifunc' => 'content_5bf7576a9070b6_77003449',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '80d590eabdce7ed8a60fc466f6192b5540f62d40' => 
     array (
       0 => 'C:\\xampp\\htdocs\\WikiBeerTPE\\templates\\cerveza.tpl',
-      1 => 1542839124,
+      1 => 1542936423,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_5bf5db63215036_48967104 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5bf7576a9070b6_77003449 (Smarty_Internal_Template $_smarty_tpl) {
 ?><div class="container">
 <table class="tablaTipos" aling="center">
     <thead>
@@ -101,6 +101,8 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
           <label for="imagen">Imagen</label>
           <input type="file" id="imagenes" name="imagenes[]" multiple>
         </div>
+              <div class="center">
+
         <button type="submit" class="btn btn-primary">Agregar</button>
         </div>
           <div class="container">

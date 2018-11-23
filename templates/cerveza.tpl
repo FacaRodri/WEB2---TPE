@@ -57,6 +57,8 @@
           <label for="imagen">Imagen</label>
           <input type="file" id="imagenes" name="imagenes[]" multiple>
         </div>
+              <div class="center">
+
         <button type="submit" class="btn btn-primary">Agregar</button>
         </div>
           <div class="container">

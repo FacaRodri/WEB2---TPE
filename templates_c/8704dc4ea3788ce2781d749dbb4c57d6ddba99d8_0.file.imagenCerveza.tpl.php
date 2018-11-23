@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.33, created on 2018-11-22 19:21:16
+/* Smarty version 3.1.33, created on 2018-11-23 02:31:32
   from 'C:\xampp\htdocs\WikiBeerTPE\templates\imagenCerveza.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.33',
-  'unifunc' => 'content_5bf6f39cec6132_51697387',
+  'unifunc' => 'content_5bf75874ba2a32_48529878',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '8704dc4ea3788ce2781d749dbb4c57d6ddba99d8' => 
     array (
       0 => 'C:\\xampp\\htdocs\\WikiBeerTPE\\templates\\imagenCerveza.tpl',
-      1 => 1542910873,
+      1 => 1542936648,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_5bf6f39cec6132_51697387 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5bf75874ba2a32_48529878 (Smarty_Internal_Template $_smarty_tpl) {
 ?> <div class="container">
   <div class="row">
     <div class="col-lg-10 col-md-10 col-sm-10 col-xs-12 col-lg-offset-1 col-md-offset-1 col-sm-offset-1">
@@ -30,10 +30,10 @@ if ($_from !== null) {
 foreach ($_from as $_smarty_tpl->tpl_vars['imagen']->value) {
 ?>
         <figure class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
-          <img width="90%" height="200px" src="<?php echo $_smarty_tpl->tpl_vars['imagen']->value['source'];?>
+          <img class="imagenesCentradas" width="90%" height="200px" src="<?php echo $_smarty_tpl->tpl_vars['imagen']->value['source'];?>
 " alt="Image">
           <figcaption>
-          <a class="btn btn-primary " href="BorrarImagen/<?php echo $_smarty_tpl->tpl_vars['imagen']->value['id_imagen'];?>
+          <a class="btn btn-primary" href="BorrarImagen/<?php echo $_smarty_tpl->tpl_vars['imagen']->value['id_imagen'];?>
 ">BORRAR</a>
          </figcaption>
         </figure>
