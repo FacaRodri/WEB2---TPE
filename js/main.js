@@ -11,38 +11,38 @@ function loadComments(){
     .then(response => response.text())
     .then(template => {
       templateComentarios = Handlebars.compile(template);
-
-      getComentarios();
-
+        getComentarios();
       document.querySelector("#agregarComentario").addEventListener('click', agregarComentario);
-      let timer = setInterval(getComentarios, 2000);
+        let timer = setInterval(getComentarios, 2000);
   });
 }
 function getComentarios() {
     var url = window.location.pathname;
     var id_cerveza= url.substring(url.lastIndexOf('/') + 1);
-    console.log(id_cerveza);
     fetch(urlAPI + '/' + id_cerveza)
     .then(r => r.json())
     .then(jsonComentarios => {
         mostrarComentarios(jsonComentarios);
-        console.log(jsonComentarios);
+        
     })
   }
-function mostrarComentarios(jsonComentarios) {
 
-  //INSTANCIAR TEMPLATE CON UN CONTEXTO
-    let context = { // como el assign de smarty
+  
+function mostrarComentarios(jsonComentarios, jsonUsuario) {
+
+        let context = { // como el assign de smarty
         comentarios: jsonComentarios,
-    }
+        admin : document.querySelector(".admin").value == 1
+        
+        }
 
     let html = templateComentarios(context);
     document.querySelector(".comentarios").innerHTML = html;
-
-    let b = document.querySelectorAll(".borrar");
+    let b = document.querySelectorAll("#borrarComentario");
     let administador = document.querySelector(".admin").getAttribute("data");
-    if (administador === "admin") {
-      b.forEach(b=> {b.addEventListener("click",function(){borrarComentario(b.getAttribute("data"))});
+    
+   if (administador === "admin") {
+      b.forEach(b=> {b.addEventListener('click',function(){borrarComentario(b.value)});
       b.removeAttribute("hidden");
 
     });
@@ -72,7 +72,6 @@ function agregarComentario(){
   .then(r => {
     if(r.ok){
       r.json().then(t => {
-        console.log("Se cargo con éxito");
         getComentarios();
       })
     }
@@ -84,11 +83,8 @@ function agregarComentario(){
 }
 
   function borrarComentario(id_comentario){
-    console.log("borrar");
-    console.log(id_comentario);
-    fetch(urlAPI + '/' + id_comentario,  {
-    'method': 'DELETE',
-    'headers': {'Content-Type': 'application/json'},
-    })
-    .then(r => loadComments())
+    fetch(urlAPI + '/' + id_comentario, {
+      method: 'DELETE'
+    }).then(r => loadComments());
+
   }

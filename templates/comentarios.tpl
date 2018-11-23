@@ -1,14 +1,6 @@
 <div class="container-fluid">
-    <div>
-      <h1>Comentario:</h1>
-    </div>
-    {* {if (isset($smarty.session.usuario))} *}
-    {$smarty.session.id_usuario|@print_r}
-    {* {if $Smarty.session.admin == 1} *}
-    <input type="input" hidden="hidden" class="admin" value="" data="admin">
-        {* {else} *}
-            <input type="input" hidden="hidden" class="admin" data="noAdmin">
-  {* {/if} *}
+
+    <input type="input" hidden="hidden" class="admin" value="{$smarty.session.admin}" data="admin">
 
     <div class="form-group">
         <textarea class="form-control" id="comentario" rows="5" placeholder="¡Comentanos aqui!"></textarea>
@@ -24,5 +16,5 @@
         <input type="input" hidden="hidden" id="id_cerveza" value="">
     </div>
   <button type="submit" class="btn btn-primary" id="agregarComentario" name="agregarComentario">ENVIAR</button>
-  {* {/if}  *}
+
 </div>

@@ -1,5 +1,5 @@
 <?php
-class Api{
+class api{
   protected $data;
   function __construct(){
     $this->data = file_get_contents("php://input");

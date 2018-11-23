@@ -1,12 +1,26 @@
+{{#if admin}}
 <ul class="list-group">
   {{#each comentarios}}
     <div class="row">
       <div class="comentarios container-fluid">
-        <li class="cometarioColor list-group-item list-group-item"> {{nombre}}</li>
-        <p class="cometarioColor list-group-item list-group-item puntaje">Puntuacion:{{puntaje}}</p>
+        <li class="cometarioColor list-group-item list-group-item">{{nombre}}</li>
+        <p class="cometarioColor list-group-item list-group-item puntaje">Puntuacion: {{puntaje}}</p>
         <li class="cometarioColor list-group-item list-group-item comentario">{{comentario}}</li>
       </div>
-      <button class="borrar btn btn-primary" hidden="hidden" data="{{id_comentario}}">BORRAR</button></li>
+      <button class="borrar btn btn-primary" value="{{id_comentario}}" id="borrarComentario" data="{{id_comentario}}">BORRAR</button>
     </div>
   {{/each}}
 </ul>
+{{else}}
+<ul class="list-group">
+  {{#each comentarios}}
+    <div class="row">
+      <div class="comentarios container-fluid">
+        <li class="cometarioColor list-group-item list-group-item">{{nombre}}</li>
+        <p class="cometarioColor list-group-item list-group-item puntaje">Puntuacion: {{puntaje}}</p>
+        <li class="cometarioColor list-group-item list-group-item comentario">{{comentario}}</li>
+      </div>
+    </div>
+  {{/each}}
+</ul>
+{{/if}}

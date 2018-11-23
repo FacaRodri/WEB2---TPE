@@ -6,6 +6,17 @@ require_once "controller/cervezaController.php";
 require_once "controller/loginController.php";
 require_once "controller/usuarioController.php";
 
+function db(){
+    try{
+      $connection = new PDO('mysql:host=localhost;dbname=wikibeer;charset=utf8', 'root', '');
+    }catch(Exception $e){
+      $db = new PDO('mysql:host=localhost;charset=utf8', 'root', '');
+          $sql = file_get_contents('wikibeer.sql');
+          $db->exec($sql);
+          }
+    }
+    db();
+
 
 function parseURL($url)
 {

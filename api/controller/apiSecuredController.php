@@ -1,6 +1,6 @@
 <?php
-require_once('Api.php');
-class ApiSecuredController extends Api
+require_once('api.php');
+class apiSecuredController extends api
 {
     private $logged;
     private $admin;

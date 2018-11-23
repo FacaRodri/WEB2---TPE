@@ -3,14 +3,14 @@ require_once "api.php";
 require_once "../model/comentariosModel.php";
 class comentariosController extends api
 {
-  //ATRIBUTOS
+  
   private $comentariosModel;
   function __construct()
   {
     parent::__construct();
     $this->comentariosModel = new comentariosModel();
   }
-//TRAE COMENTARIOS
+
   function mostrarComentario($id_cerveza = null){
     if(isset($id_cerveza)){
       $comentario = $this->comentariosModel->getByCerveza($id_cerveza);
@@ -23,5 +23,6 @@ class comentariosController extends api
       return $this->json_response(null, 404);
     }
   }
+  
 }
  ?>
